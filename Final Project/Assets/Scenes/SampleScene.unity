@@ -325,9 +325,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b784c7d75005e14287fff7e93cdb23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 3, y: 3}
+  size: {x: 6, y: 6}
   startPos: 0
-  tile: {fileID: 2783130946175445077, guid: d8d43676cc939dd40996ec06596d932f, type: 3}
+  tiles:
+  - {fileID: 9111793197592102596, guid: 738cdc4f395b1b44ab8c8cf915cc6edd, type: 3}
+  - {fileID: 1789051570033490927, guid: 86a0b4290ba18f14c909bbccf8ed8050, type: 3}
+  - {fileID: 7075138622642120793, guid: 5fc52274e5633ed4ca73ec884de5d3fc, type: 3}
+  - {fileID: 2783130946175445077, guid: d8d43676cc939dd40996ec06596d932f, type: 3}
   offset: {x: 6, y: 6}
 --- !u!4 &2016524065
 Transform:

@@ -7,12 +7,12 @@ public class ArenaGenerator : MonoBehaviour
 
     public class Cell{
         public bool visited = false;
-        public bool[] status = new bool[2];
+        public bool[] status = new bool[3];
     }
 
     public Vector2 size;
     public int startPos = 0;
-    public GameObject tile;
+    public GameObject[] tiles;
     public Vector2 offset;
 
     List<Cell> board;
@@ -30,11 +30,19 @@ public class ArenaGenerator : MonoBehaviour
     }
 
     void GenerateArena(){
+        int previousTile = Random.Range(0, tiles.Length);
+        int randomTile;
         for (int i = 0; i < size.x; i++){
             for (int j = 0; j < size.y; j++){
+                if (Random.Range(0,2) == 0)
+                    randomTile = Random.Range(0, tiles.Length);
+                else
+                    randomTile = previousTile;
+                var newTile = Instantiate(tiles[randomTile], new Vector3(i*offset.x,0,-j*offset.y), Quaternion.identity, transform);
+                newTile.GetComponent<TileBehaviour>().UpdateTile(board[Mathf.FloorToInt(i+j*size.x)].status);
+                newTile.name += " " + i + " " + j;
 
-               var newTile = Instantiate(tile, new Vector3(i*offset.x,0,-j*offset.y), Quaternion.identity, transform);
-               //newTile.GetComponent<TileBehaviour>().UpdateTile(board[Mathf.FloorToInt(i+j*size.x)].status);
+                previousTile = randomTile;
             }
         }
     }
@@ -73,7 +81,16 @@ public class ArenaGenerator : MonoBehaviour
 
                 int newCell = neighbours[Random.Range(0, neighbours.Count)];
 
-                //board[currentCell].status[(Random.Range(0, 2))] = true;
+                //if (newCell > currentCell){
+                    int towerNumber = Random.Range(0, 3); 
+                    board[currentCell].status[towerNumber] = true;
+                    currentCell = newCell;
+                    //if(Random.Range(0, 2) == 0)
+                    //    board[newCell].status[towerNumber] = true;
+                    //else
+                    //    board[newCell].status[Random.Range(0, 3)] = true;   
+                //} 
+                
             }
         }
         GenerateArena();
