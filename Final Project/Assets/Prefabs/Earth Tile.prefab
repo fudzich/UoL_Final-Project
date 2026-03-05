@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 354789855893559953}
   - component: {fileID: 6003823711597605388}
   - component: {fileID: 3935786377077244644}
+  - component: {fileID: 4530476834545568038}
+  - component: {fileID: 6919585456796543041}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Earth
@@ -209,6 +211,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+--- !u!114 &4530476834545568038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369857416625730448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e2e0db558b6a74ba7d8321574f3bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusDistance: 30
+  targetTags:
+  - Fire
+  - Nature
+  - Water
+  fireRate: 2
+--- !u!114 &6919585456796543041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369857416625730448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e575237f88a8434cadd47ea817a12e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
+    type: 3}
+  projectileTag: Earth
+  projectileMaterial: {fileID: 2100000, guid: 2157d8a98d67fb64d8680eb8d71d139f, type: 2}
 --- !u!1 &5710014867572802529
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +291,7 @@ GameObject:
   - component: {fileID: 37480615558450736}
   - component: {fileID: 5163878956214730399}
   - component: {fileID: 3857455061388037447}
+  - component: {fileID: 1959368751978520235}
   m_Layer: 0
   m_Name: Bastion
   m_TagString: Earth
@@ -352,6 +389,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1959368751978520235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041880548065725268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1e10e04af86774c98ab6265d79d404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  currentHealth: 0
 --- !u!1 &9111793197592102596
 GameObject:
   m_ObjectHideFlags: 0

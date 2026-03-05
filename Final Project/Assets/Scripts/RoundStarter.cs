@@ -21,6 +21,10 @@ public class RoundStarter : MonoBehaviour
     {
         if (!hasStarted && Input.GetKeyDown(KeyCode.Y))
         {
+
+            GameObject playerObject = GameObject.Find("Player");
+            playerObject.tag = "Water";
+
             if (enemySpawner != null)
             {
                 enemySpawner.SpawnEnemies();

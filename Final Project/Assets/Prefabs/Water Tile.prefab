@@ -83,6 +83,8 @@ GameObject:
   - component: {fileID: 769675021013806508}
   - component: {fileID: 992943212343616993}
   - component: {fileID: 9013651921016672874}
+  - component: {fileID: 1450870270969715616}
+  - component: {fileID: 8033815642893954290}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Water
@@ -194,6 +196,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+--- !u!114 &1450870270969715616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362529667046249160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e2e0db558b6a74ba7d8321574f3bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusDistance: 30
+  targetTags:
+  - Fire
+  - Earth
+  - Nature
+  fireRate: 2
+--- !u!114 &8033815642893954290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362529667046249160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e575237f88a8434cadd47ea817a12e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
+    type: 3}
+  projectileTag: Water
+  projectileMaterial: {fileID: 2100000, guid: 54b935bdb2aeeec458b0ea729d94115d, type: 2}
 --- !u!1 &2783130946175445077
 GameObject:
   m_ObjectHideFlags: 0
