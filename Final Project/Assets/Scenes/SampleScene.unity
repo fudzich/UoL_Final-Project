@@ -140,6 +140,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 999
+--- !u!114 &135954435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135954426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95bfeab95f807a449ba56b430d14a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportDistance: 5
 --- !u!1001 &434555353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,6 +314,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &882489828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882489829}
+  - component: {fileID: 882489830}
+  - component: {fileID: 882489831}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882489829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882489828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.981644, y: 11.900967, z: -13.702832}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882489830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882489828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84f5f1fe55bbc84f86f3ba0a820d314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earth_melee: {fileID: 4536346144068536534, guid: 26fb735ab9731ed4c928d575c4fcfce4,
+    type: 3}
+  fire_melee: {fileID: 8822659056538816661, guid: 2a0b3162372047c489dba614e42b0a8c,
+    type: 3}
+  nature_melee: {fileID: 2996777333740986323, guid: 731bfaeb21ad36e4683809186e4a4d30,
+    type: 3}
+  water_melee: {fileID: 3980173125939072052, guid: a98eed997570fbb4a96dd06dec2df70f,
+    type: 3}
+  earth_ranged: {fileID: 8623315391742800934, guid: b4670163712e1bc4d93073afefbffe38,
+    type: 3}
+  fire_ranged: {fileID: 1733204006708951475, guid: b3e5e9749c367a147b7b78f2ddd74e9e,
+    type: 3}
+  nature_ranged: {fileID: 8623315391742800934, guid: b4670163712e1bc4d93073afefbffe38,
+    type: 3}
+  water_ranged: {fileID: 7290136160708279755, guid: 4d2c96790b505884c9522a2b4bc5b70a,
+    type: 3}
+  numberOfEnemies: 3
+  spawnRadius: 2
+--- !u!114 &882489831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882489828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4337602bb7a414840979935c092f1b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +542,7 @@ PrefabInstance:
     - target: {fileID: 8659628630936474259, guid: 696c57d67e606ec42aa0c9b1375c0b6f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.75
+      value: 18.04
       objectReference: {fileID: 0}
     - target: {fileID: 8659628630936474259, guid: 696c57d67e606ec42aa0c9b1375c0b6f,
         type: 3}

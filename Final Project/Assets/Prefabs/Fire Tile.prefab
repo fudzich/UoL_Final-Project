@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 1352417524620000288}
   - component: {fileID: 8625895054176446629}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Bastion
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,8 +227,8 @@ GameObject:
   - component: {fileID: 7242798532920244173}
   - component: {fileID: 4980596401938961564}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  m_Name: Tower
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

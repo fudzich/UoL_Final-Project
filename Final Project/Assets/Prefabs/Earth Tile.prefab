@@ -82,8 +82,8 @@ GameObject:
   - component: {fileID: 5219585149490349593}
   - component: {fileID: 354789855893559953}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  m_Name: Tower
+  m_TagString: Earth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,8 +208,8 @@ GameObject:
   - component: {fileID: 37480615558450736}
   - component: {fileID: 5163878956214730399}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Bastion
+  m_TagString: Earth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
