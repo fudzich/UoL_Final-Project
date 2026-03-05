@@ -89,7 +89,7 @@ BoxCollider:
   m_GameObject: {fileID: 3185753797557013901}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -106,6 +106,10 @@ GameObject:
   - component: {fileID: 4109229579036594920}
   - component: {fileID: 4249022359091940692}
   - component: {fileID: 5332989328921675888}
+  - component: {fileID: 3958688650848437287}
+  - component: {fileID: 58617705447696167}
+  - component: {fileID: 2357248902399560046}
+  - component: {fileID: 3523482827865267922}
   m_Layer: 0
   m_Name: Enemy_Melee
   m_TagString: Water
@@ -204,6 +208,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3958688650848437287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980173125939072052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1e10e04af86774c98ab6265d79d404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 120
+  currentHealth: 0
+--- !u!114 &58617705447696167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980173125939072052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922f70c330b26e640a31e3effc6350db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slashPrefab: {fileID: 3704509730397504793, guid: 7efc6fd0b7667934abd395896448a4d2,
+    type: 3}
+  projectileTag: Water
+--- !u!114 &2357248902399560046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980173125939072052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1dfe1848ce16f04ea508c9e84117c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusDistance: 13
+  targetTags:
+  - Fire
+  - Earth
+  - Nature
+  attackDistance: 2
+  moveSpeed: 3
+  attackRate: 1
+--- !u!54 &3523482827865267922
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3980173125939072052}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6914390153825715843
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +362,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6914390153825715843}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -387,7 +456,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7036926788285492012}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1

@@ -62,6 +62,8 @@ public class RangedEnemyBehavior : MonoBehaviour
                     // Ignore objects named "Bullet"
                     if (obj.name == "Bullet(Clone)")
                         continue;
+                    if (obj.name == "Slash(Clone)") // ignoring bullets
+                        continue;
                     
                     float dist = Vector3.Distance(transform.position, obj.transform.position);
                     if (dist <= focusDistance && dist < closestDistance)
@@ -96,6 +98,11 @@ public class RangedEnemyBehavior : MonoBehaviour
             }
         }
 
+        
+    }
+
+    private void moveToclosest()
+    {
         
     }
 
