@@ -20,7 +20,7 @@ public class ArenaGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MazeGenerator();
+        PathGenerator();
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class ArenaGenerator : MonoBehaviour
         }
     }
 
-    void MazeGenerator(){
+    void PathGenerator(){
         board = new List<Cell>();
         
         for (int i = 0; i < size.x; i++){
@@ -111,7 +111,7 @@ public class ArenaGenerator : MonoBehaviour
         if((cell + 1) % size.x != 0 && !board[Mathf.FloorToInt(cell + 1)].visited){
             neighbours.Add(Mathf.FloorToInt(cell + 1));
         }
-        //check legt neigbour
+        //check left neigbour
         if(cell % size.x != 0 && !board[Mathf.FloorToInt(cell - 1)].visited){
             neighbours.Add(Mathf.FloorToInt(cell - 1));
         }
