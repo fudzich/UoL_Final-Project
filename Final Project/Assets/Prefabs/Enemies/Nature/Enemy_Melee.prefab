@@ -343,13 +343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dfe1848ce16f04ea508c9e84117c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusDistance: 13
+  focusDistance: 10
   targetTags:
   - Fire
   - Earth
   - Water
   attackDistance: 2
-  moveSpeed: 3
+  moveSpeed: 6
   attackRate: 1
 --- !u!54 &2318174853420005912
 Rigidbody:

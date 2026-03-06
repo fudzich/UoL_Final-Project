@@ -101,9 +101,21 @@ public class RangedEnemyBehavior : MonoBehaviour
         
     }
 
-    private void moveToclosest()
+    private void moveToclosest(GameObject closestOutsideTarget)
     {
-        
+        Vector3 direction = (closestOutsideTarget.transform.position - transform.position).normalized;
+        direction.y = 0f;
+
+        // Move towards the target
+        float moveSpeed = 3f; // or define as a serialized field
+        transform.position += direction * moveSpeed * Time.deltaTime;
+
+        // Optional: rotate to face the target
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 15f);
+        }
     }
 
     //private void OnTriggerEnter(Collider other)
