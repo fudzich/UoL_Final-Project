@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class FloorIsLava : MonoBehaviour
 {
-    [SerializeField] private float bulletDamage = 2f;
+    [SerializeField] private float fireDamage = 2f;
+    private float damageTimer = 0f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        // Avoid damaging objects with the same tag as the bullet
+        // Check if the object is the player
         if (other.gameObject.tag != this.tag)
         {
-            // Try to get the HealthManagement component from the other object
-            var health = other.GetComponent<HealthManagement>();
-            if (health != null)
+            // Increment the timer
+            damageTimer += Time.deltaTime;
+
+            // Apply damage every 1 second
+            if (damageTimer >= 1f)
             {
-                health.TakeDamage(bulletDamage);
+                // Try to get the HealthManagement component from the other object
+                var health = other.GetComponent<HealthManagement>();
+                if (health != null)
+                {
+                    health.TakeDamage(fireDamage);
+                }
+                damageTimer = 0f;
             }
         }
-        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag != this.tag)
+        {
+            // Reset timer when player leaves
+            damageTimer = 0f;
+        }
     }
 }
