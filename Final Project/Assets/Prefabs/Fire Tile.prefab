@@ -245,6 +245,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5745795759581947431}
   - component: {fileID: 8048803315520588487}
+  - component: {fileID: 6361920186537956785}
+  - component: {fileID: 6841302166530418285}
   m_Layer: 0
   m_Name: Fire Tile
   m_TagString: Untagged
@@ -298,6 +300,32 @@ MonoBehaviour:
   - {fileID: 8970131842982499370}
   - {fileID: 6203457798809601122}
   - {fileID: 2658367385332993871}
+--- !u!65 &6361920186537956785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789051570033490927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.615914, y: 1.7524421, z: 5.6324825}
+  m_Center: {x: 0.7910559, y: 0.37622106, z: -0.5108137}
+--- !u!114 &6841302166530418285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789051570033490927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1a9fd5226556948bae3e565bf2aad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDamage: 2
 --- !u!1 &1972545349979009713
 GameObject:
   m_ObjectHideFlags: 0
