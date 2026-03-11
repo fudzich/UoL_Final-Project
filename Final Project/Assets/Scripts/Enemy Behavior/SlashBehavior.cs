@@ -17,13 +17,24 @@ public class SlashBehavior : MonoBehaviour
         // Avoid damaging objects with the same tag as the bullet
         if (other.gameObject.tag != this.tag)
         {
-            // Try to get the HealthManagement component from the other object
-            var health = other.GetComponent<HealthManagement>();
-            if (health != null)
+            if(other.name == "Player")
             {
-                health.TakeDamage(meleeDamage);
+                var health = other.GetComponent<PlayerHealthManagement>();
+                if (health != null)
+                {
+                    health.TakeDamage(meleeDamage);
+                }
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+            // Try to get the HealthManagement component from the other object
+            else{
+                var health = other.GetComponent<HealthManagement>();
+                if (health != null)
+                {
+                    health.TakeDamage(meleeDamage);
+                }
+                Destroy(gameObject);
+            }
         }
         
     }

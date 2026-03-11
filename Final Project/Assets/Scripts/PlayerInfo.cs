@@ -6,4 +6,6 @@ public static class PlayerInfo
 {
     public static string tag;
     public static int kills;
+
+    public static int maxHealth = 100;
 }

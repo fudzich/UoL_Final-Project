@@ -65,4 +65,10 @@ public class PlayerAnimationController : MonoBehaviour
             animator.SetBool("m_left", true);
         }
     }
+
+    public void PlayerDead()
+    {
+        animator.SetBool("dead", true);
+        //animator.SetBool("dead", false);
+    }
 }
