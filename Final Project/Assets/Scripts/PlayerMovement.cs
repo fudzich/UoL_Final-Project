@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 movementDirection { get; private set; }
 
+    [SerializeField]
+
+    private float speedSlower = 0f;
+
 
     void Start()
     {
@@ -30,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontal_movement = Input.GetAxisRaw("Horizontal");
 
         Vector3 inputDir = new Vector3(horizontal_movement, 0, vertical_movement).normalized;
-        Vector3 moveDir = inputDir * movementSpeed * Time.deltaTime;
+        Vector3 moveDir = inputDir * (movementSpeed - speedSlower) * Time.deltaTime;
 
         rb.MovePosition(transform.position + moveDir);
 
@@ -46,6 +50,16 @@ public class PlayerMovement : MonoBehaviour
             movementDirection = moveDir.normalized;
         }
 
+    }
+
+    public void ModifySpeed()
+    {
+        speedSlower = movementSpeed / 2;
+    }
+
+    public void ResetSpeed()
+    {
+        speedSlower = 0f;
     }
 
 }

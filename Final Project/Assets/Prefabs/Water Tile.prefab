@@ -434,7 +434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Water
   projectileMaterial: {fileID: 2100000, guid: 54b935bdb2aeeec458b0ea729d94115d, type: 2}
 --- !u!136 &7641640687422011028
 CapsuleCollider:
@@ -710,7 +709,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Water
   projectileMaterial: {fileID: 2100000, guid: 54b935bdb2aeeec458b0ea729d94115d, type: 2}
 --- !u!1 &2783130946175445077
 GameObject:
@@ -723,6 +721,8 @@ GameObject:
   - component: {fileID: 8210481000389522845}
   - component: {fileID: 6639915912676908416}
   - component: {fileID: -2512905064121399381}
+  - component: {fileID: 1683409365587698995}
+  - component: {fileID: 787072658642632156}
   m_Layer: 0
   m_Name: Water Tile
   m_TagString: Untagged
@@ -790,6 +790,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+--- !u!114 &1683409365587698995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783130946175445077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e5e5c95d38159418cd07432e6c15fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &787072658642632156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783130946175445077}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.3383346, y: 1.6058666, z: 5.390291}
+  m_Center: {x: 0.9007442, y: 0.3029334, z: -0.57464373}
 --- !u!1 &4656210255695849347
 GameObject:
   m_ObjectHideFlags: 0

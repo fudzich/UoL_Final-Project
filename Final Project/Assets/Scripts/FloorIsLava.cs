@@ -10,7 +10,7 @@ public class FloorIsLava : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // Check if the object is the player
-        if (other.gameObject.tag != this.tag)
+        if (other.gameObject.tag != "Fire")
         {
             // Increment the timer
             damageTimer += Time.deltaTime;
@@ -31,7 +31,7 @@ public class FloorIsLava : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag != this.tag)
+        if (other.gameObject.tag != "Fire")
         {
             // Reset timer when player leaves
             damageTimer = 0f;

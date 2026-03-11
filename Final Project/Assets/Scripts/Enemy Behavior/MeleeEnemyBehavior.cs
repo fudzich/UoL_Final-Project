@@ -8,10 +8,13 @@ public class MeleeEnemyBehavior : MonoBehaviour
     [SerializeField] private List<string> targetTags;
     [SerializeField] private float attackDistance = 2f; // Distance to trigger slash attack
     [SerializeField] private float moveSpeed = 3f; // Speed at which the enemy moves toward the target
-    [SerializeField] private float attackRate = 1f; // How often it can attack
+     private float attackRate = 1f; // How often it can attack
     private float attackTimer = 0f;
     private SlashSpawner slashSpawner;
     //private Rigidbody rb;
+
+    [SerializeField]
+    private float speedSlower = 0f;
 
     void Start()
     {
@@ -88,7 +91,7 @@ public class MeleeEnemyBehavior : MonoBehaviour
             {
                 // Move towards the target
                 Vector3 moveDirection = direction.normalized;
-                transform.position += moveDirection * moveSpeed * Time.deltaTime;
+                transform.position += moveDirection * (moveSpeed - speedSlower) * Time.deltaTime;
 
                 // Rotate to face the target
                 if (moveDirection != Vector3.zero)
@@ -111,4 +114,15 @@ public class MeleeEnemyBehavior : MonoBehaviour
             }
         }
     }
+
+    public void ModifySpeed()
+    {
+        speedSlower = moveSpeed / 2;
+    }
+
+    public void ResetSpeed()
+    {
+        speedSlower = 0f;
+    }
+    
 }
