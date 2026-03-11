@@ -24,7 +24,7 @@ public class PlayerShoot : MonoBehaviour
             // Call the SpawnProjectile method
             if (projectileSpawner != null)
             {
-                projectileSpawner.SpawnProjectile();
+                projectileSpawner.SpawnProjectile(gameObject.tag);
             }
         }
     }

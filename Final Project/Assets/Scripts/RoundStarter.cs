@@ -23,7 +23,16 @@ public class RoundStarter : MonoBehaviour
         {
 
             GameObject playerObject = GameObject.Find("Player");
-            playerObject.tag = "Water";
+
+            if (PlayerInfo.tag != null)
+            {
+                playerObject.tag = PlayerInfo.tag;
+            }
+            else
+            {
+                PlayerInfo.tag = "Water";
+                playerObject.tag = PlayerInfo.tag;
+            }
 
             if (enemySpawner != null)
             {

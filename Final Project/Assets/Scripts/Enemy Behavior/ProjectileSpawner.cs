@@ -6,11 +6,11 @@ public class ProjectileSpawner : MonoBehaviour
 {
     // Serialized fields for customization in inspector
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private string projectileTag;
+    //[SerializeField] private string projectileTag;
     [SerializeField] private Material projectileMaterial;
 
     // Method to spawn projectile from the front of the object
-    public void SpawnProjectile()
+    public void SpawnProjectile(string projectileTag)
     {
         if (projectilePrefab == null)
         {

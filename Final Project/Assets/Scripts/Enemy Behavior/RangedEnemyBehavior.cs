@@ -92,7 +92,7 @@ public class RangedEnemyBehavior : MonoBehaviour
             {
                 if (projectileSpawner != null)
                 {
-                    projectileSpawner.SpawnProjectile();
+                    projectileSpawner.SpawnProjectile(gameObject.tag);
                 }
                 fireTimer = 0f; // reset timer after firing
             }

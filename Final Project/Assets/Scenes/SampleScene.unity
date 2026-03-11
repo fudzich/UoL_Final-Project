@@ -8633,6 +8633,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 910764939, guid: b348568ff60c1e2438fda229231ed3d4, type: 3}
+      propertyPath: projectileMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 5600e67e472754940ab525feb38f3e0c, type: 2}
     - target: {fileID: 731710203832275104, guid: b348568ff60c1e2438fda229231ed3d4,
         type: 3}
       propertyPath: m_RootOrder
