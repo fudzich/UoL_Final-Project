@@ -39,7 +39,7 @@ public class PlayerAnimationController : MonoBehaviour
         float rightDot = Vector3.Dot(moveDirNormalized, right);
 
         // Threshold to determine dominant direction
-        float threshold = 0.3f;
+        float threshold = 0.2f;
 
         // Reset all
         animator.SetBool("m_forward", false);
