@@ -3766,11 +3766,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 910764938, guid: b348568ff60c1e2438fda229231ed3d4, type: 3}
       propertyPath: movementSpeed
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 910764942, guid: b348568ff60c1e2438fda229231ed3d4, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 910764942, guid: b348568ff60c1e2438fda229231ed3d4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 731710203832275104, guid: b348568ff60c1e2438fda229231ed3d4,
         type: 3}
