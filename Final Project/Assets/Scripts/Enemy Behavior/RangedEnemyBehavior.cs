@@ -29,7 +29,9 @@ public class RangedEnemyBehavior : MonoBehaviour
 
     void Update()
     {
-        // Update the cooldown timer
+        if (PlayerInfo.gameStart)
+        {
+            // Update the cooldown timer
         fireTimer += Time.deltaTime;
 
         GameObject target = null;
@@ -97,7 +99,7 @@ public class RangedEnemyBehavior : MonoBehaviour
                 fireTimer = 0f; // reset timer after firing
             }
         }
-
+        }
         
     }
 

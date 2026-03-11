@@ -29,6 +29,7 @@ public class PlayerHealthManagement : MonoBehaviour
         {
             //Debug.Log("AU");
             dead = true;
+            PlayerInfo.gameStart = false;
             StartCoroutine(WaitAndChangeScene());
         }
     }

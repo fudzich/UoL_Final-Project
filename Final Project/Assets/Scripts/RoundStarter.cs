@@ -21,6 +21,7 @@ public class RoundStarter : MonoBehaviour
     {
         if (!hasStarted && Input.GetKeyDown(KeyCode.Y))
         {
+            PlayerInfo.gameStart = true;
 
             GameObject playerObject = GameObject.Find("Player");
 
