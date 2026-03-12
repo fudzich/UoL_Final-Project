@@ -10,4 +10,6 @@ public static class PlayerInfo
     public static int maxHealth = 100;
 
     public static bool gameStart = false;
+
+    public static float dmgIncrease = 1;
 }

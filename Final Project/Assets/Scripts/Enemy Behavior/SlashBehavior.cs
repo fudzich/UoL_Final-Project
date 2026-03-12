@@ -5,14 +5,14 @@ using UnityEngine;
 public class SlashBehavior : MonoBehaviour
 {
     [SerializeField] private float meleeDamage = 20f;
-    [SerializeField] protected float lifetime = 5f;
+    [SerializeField] protected float lifetime = 2f;
 
     void Start()
     {
         Destroy(gameObject, lifetime);
     }
 
-     private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         // Avoid damaging objects with the same tag as the bullet
         if (other.gameObject.tag != this.tag)

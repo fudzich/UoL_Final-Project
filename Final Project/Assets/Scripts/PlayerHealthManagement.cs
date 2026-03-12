@@ -44,4 +44,8 @@ public class PlayerHealthManagement : MonoBehaviour
         SceneManager.LoadScene("OpenScene");
     }
 
+    public float GetCurrentHealth(){
+        return currentHealth;
+    }
+
 }

@@ -677,7 +677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3202150582624610412
 Transform:
   m_ObjectHideFlags: 0
@@ -1183,7 +1183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Fire
   projectileMaterial: {fileID: 2100000, guid: ad5d60b5ab86699489c9ea35e383ef00, type: 2}
 --- !u!136 &6362293751837488904
 CapsuleCollider:

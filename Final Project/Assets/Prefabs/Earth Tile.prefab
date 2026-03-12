@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1e10e04af86774c98ab6265d79d404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 300
   currentHealth: 0
 --- !u!114 &4530476834545568038
 MonoBehaviour:
@@ -434,7 +434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Earth
   projectileMaterial: {fileID: 2100000, guid: 2157d8a98d67fb64d8680eb8d71d139f, type: 2}
 --- !u!65 &4538723806934113703
 BoxCollider:
@@ -709,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1e10e04af86774c98ab6265d79d404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 300
   currentHealth: 0
 --- !u!65 &1302610931660638677
 BoxCollider:

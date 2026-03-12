@@ -15008,7 +15008,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Nature
   projectileMaterial: {fileID: 2100000, guid: 34955dbf21a75984dbe57300abbdf73b, type: 2}
 --- !u!114 &3362070607130164927
 MonoBehaviour:
