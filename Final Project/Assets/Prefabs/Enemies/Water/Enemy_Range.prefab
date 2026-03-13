@@ -1324,7 +1324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Water
   projectileMaterial: {fileID: 2100000, guid: 54b935bdb2aeeec458b0ea729d94115d, type: 2}
 --- !u!114 &5306993141950115231
 MonoBehaviour:

@@ -49,7 +49,20 @@ public class Nature_Regen : MonoBehaviour
                     healthManagement.SetHealth(PlayerInfo.maxHealth);
                 }
                 healTimer = 0f; // reset timer
-            }
+
+                Transform regenTransform = transform.Find("Nature Lvl 3");
+                if (regenTransform != null)
+                {
+                    GameObject regenObject = regenTransform.gameObject;
+                    // Turn it on
+                    Debug.Log("Found SelfBurn as child of Player");
+                    regenObject.SetActive(true);
+                }
+                else
+                {
+                    Debug.LogWarning("SelfBurn object not found as child of Player");
+                }
+                }
         }
         else
         {

@@ -6,7 +6,7 @@ public class BulletFly : MonoBehaviour
 {
 
     [SerializeField]
-    float speed = 25f;
+    public float speed = 25f;
 
 
     // Start is called before the first frame update

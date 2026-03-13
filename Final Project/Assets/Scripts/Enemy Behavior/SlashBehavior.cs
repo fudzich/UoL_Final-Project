@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlashBehavior : MonoBehaviour
 {
-    [SerializeField] private float meleeDamage = 20f;
+    [SerializeField] public float meleeDamage = 20f;
     [SerializeField] protected float lifetime = 2f;
 
     void Start()

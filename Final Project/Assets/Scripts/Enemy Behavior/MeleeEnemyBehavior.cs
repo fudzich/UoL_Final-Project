@@ -47,7 +47,6 @@ public class MeleeEnemyBehavior : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         if (player != null)
         {
-
             float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
             if (distToPlayer <= focusDistance)
             {
