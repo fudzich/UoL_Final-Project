@@ -7829,9 +7829,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e873c77799950d4b957114ee00ada4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangedFriend: {fileID: 8623315391742800934, guid: b4670163712e1bc4d93073afefbffe38,
+  rangedFriend: {fileID: 8623315391742800934, guid: 8e056e5640227e944a9e5f3f21a855da,
     type: 3}
-  meleeFriend: {fileID: 2996777333740986323, guid: 731bfaeb21ad36e4683809186e4a4d30,
+  meleeFriend: {fileID: 2996777333740986323, guid: afdc1781f6e573b44a6892354e84cb20,
     type: 3}
   materialPrefab: {fileID: 2100000, guid: 5600e67e472754940ab525feb38f3e0c, type: 2}
 --- !u!114 &1930561309

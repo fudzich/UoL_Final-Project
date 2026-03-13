@@ -25,6 +25,15 @@ public class RangedEnemyBehavior : MonoBehaviour
             Debug.LogError("HealthManagement component not found on this GameObject.");
         }
 
+        string objTag = gameObject.tag; // Get the tag of the object
+        // Check if the tag exists in the list
+        if (targetTags.Contains(objTag))
+        {
+            // Remove the tag from the list
+            targetTags.Remove(objTag);
+            //Debug.Log($"Removed tag {objTag} from the list.");
+        }
+
     }
 
     void Update()

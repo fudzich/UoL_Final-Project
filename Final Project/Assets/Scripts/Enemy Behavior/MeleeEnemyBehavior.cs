@@ -24,7 +24,14 @@ public class MeleeEnemyBehavior : MonoBehaviour
             Debug.LogError("SlashSpawner component not found on the Enemy.");
         }
 
-        
+        string objTag = gameObject.tag; // Get the tag of the object
+        // Check if the tag exists in the list
+        if (targetTags.Contains(objTag))
+        {
+            // Remove the tag from the list
+            targetTags.Remove(objTag);
+            //Debug.Log($"Removed tag {objTag} from the list.");
+        }
 
     }
 
