@@ -22,6 +22,11 @@ public class PlayerHealthManagement : MonoBehaviour
         currentHealth -= damageAmount;
     }
 
+    public void Heal(float healAmount)
+    {
+        currentHealth += healAmount;
+    }
+
     void Update()
     {
         // Check if health is 0 or below
@@ -46,6 +51,10 @@ public class PlayerHealthManagement : MonoBehaviour
 
     public float GetCurrentHealth(){
         return currentHealth;
+    }
+
+    public void SetHealth(float health){
+        currentHealth = health;
     }
 
 }

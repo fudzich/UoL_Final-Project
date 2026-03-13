@@ -191,7 +191,7 @@ BoxCollider:
   m_GameObject: {fileID: 5943528649320813155}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Center: {x: 0.0000019073486, y: 0.00000011920929, z: -0.0000019073486}
@@ -304,7 +304,6 @@ GameObject:
   - component: {fileID: 3733396879356012581}
   - component: {fileID: 9055438749358328244}
   - component: {fileID: 6506313069289654831}
-  - component: {fileID: 1908571668110258947}
   - component: {fileID: 8130656540423841164}
   - component: {fileID: 8577492105091771211}
   - component: {fileID: -3460546356623268273}
@@ -399,20 +398,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1908571668110258947
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9155172266665747051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &8130656540423841164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -422,10 +407,10 @@ BoxCollider:
   m_GameObject: {fileID: 9155172266665747051}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.139461, y: 3.5912607, z: 1.1280687}
+  m_Center: {x: 0.017890887, y: 0.79562956, z: -0.016818708}
 --- !u!114 &8577492105091771211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +443,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Earth
   projectileMaterial: {fileID: 2100000, guid: 2157d8a98d67fb64d8680eb8d71d139f, type: 2}
 --- !u!114 &3120132187423015333
 MonoBehaviour:

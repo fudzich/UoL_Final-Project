@@ -8,10 +8,13 @@ public class UseSpells : MonoBehaviour
     public Fire_Blast fireBlast;
     public Fire_SelfBurn fireSelfBurn;
     public Nature_SpawnFriend natureSpawnFriend;
+
+    public Nature_Regen natureRegen;
     public int igniteLevel = 1; // Set the desired level for Ignite spell
     public int blastLevel = 1; // Set the desired level for Ignite spell
     public int selfBurnLevel = 1; // Set the desired level for Ignite spell
     public int spawnFriendLevel = 1; // Set the desired level for Ignite spell
+     public int regenLevel = 1; // Set the desired level for Ignite spell
 
     void Update()
     {
@@ -60,6 +63,19 @@ public class UseSpells : MonoBehaviour
             {
                 //Debug.Log("Cast");
                 natureSpawnFriend.SpawnFriend(spawnFriendLevel);
+            }
+            else
+            {
+                Debug.LogWarning("Fire_Ignition reference is not set.");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            if (natureRegen != null)
+            {
+                //Debug.Log("Cast");
+                natureRegen.Regen(regenLevel);
             }
             else
             {
