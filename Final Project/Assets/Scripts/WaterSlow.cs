@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WaterSlow : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Ahoy");
+        //Debug.Log("Ahoy");
         if (other.gameObject.tag != "Water")
         {
             if(other.name == "Player")
@@ -30,7 +30,7 @@ public class WaterSlow : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Hoya");
+        //Debug.Log("Hoya");
         if (other.gameObject.tag != "Water")
         {
             if(other.name == "Player")

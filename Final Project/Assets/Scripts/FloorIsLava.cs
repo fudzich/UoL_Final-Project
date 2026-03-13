@@ -18,13 +18,24 @@ public class FloorIsLava : MonoBehaviour
             // Apply damage every 1 second
             if (damageTimer >= 1f)
             {
-                // Try to get the HealthManagement component from the other object
-                var health = other.GetComponent<HealthManagement>();
-                if (health != null)
+                if(other.name == "Player")
                 {
-                    health.TakeDamage(fireDamage);
+                    var health = other.GetComponent<PlayerHealthManagement>();
+                    if (health != null)
+                    {
+                        health.TakeDamage(fireDamage);
+                    }
+                    damageTimer = 0f;
                 }
-                damageTimer = 0f;
+                // Try to get the HealthManagement component from the other object
+                else{
+                    var health = other.GetComponent<HealthManagement>();
+                    if (health != null)
+                    {
+                        health.TakeDamage(fireDamage);
+                    }
+                    damageTimer = 0f;
+                }
             }
         }
     }
