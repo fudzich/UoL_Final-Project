@@ -15,6 +15,7 @@ public class UseSpells : MonoBehaviour
     public Earth_LaunchBoulder launchBoulder;
     public Water_Heal heal;
     public Water_Tornado tornado;
+    public Water_Beam beam;
 
     public int igniteLevel = 1; // Set the desired level for Ignite spell
     public int blastLevel = 1; // Set the desired level for Ignite spell
@@ -27,6 +28,7 @@ public class UseSpells : MonoBehaviour
     public int launchBoulderLevel = 1;
     public int healLevel = 1;
     public int tornadoLevel = 1;
+    public int beamLevel = 1;
 
 
 
@@ -34,6 +36,7 @@ public class UseSpells : MonoBehaviour
 
     private bool isHealCasting = false;
     private bool isTornadoCasting = false;
+    private bool isBeamCasting = false;
 
     void Update()
     {
@@ -156,6 +159,7 @@ public class UseSpells : MonoBehaviour
 
         CastHeal();
         CastTornado();
+        CastBeam();
     }
 
     private void CastHeal()
@@ -216,6 +220,39 @@ public class UseSpells : MonoBehaviour
         {
             isTornadoCasting = false;
             tornado.StopTornado();
+
+        }
+    }
+
+    private void CastBeam()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            // Start casting if not already
+            if (!isBeamCasting)
+            {
+                isBeamCasting = true;
+                beam.FireBeam(beamLevel);
+                //Debug.Log("beam cast");
+            }
+            // Continue casting: heal the player here
+        }
+        else
+        {
+            // If the button is released, stop casting
+            if (isBeamCasting)
+            {
+                isBeamCasting = false;
+                //beam.StopBeam();
+                //Debug.Log("beam destroyed");
+            }
+        }
+
+        // 2. Check if any other key is pressed during casting to interrupt
+        if (isBeamCasting && Input.anyKeyDown)
+        {
+            isBeamCasting = false;
+            beam.StopBeam();
 
         }
     }
