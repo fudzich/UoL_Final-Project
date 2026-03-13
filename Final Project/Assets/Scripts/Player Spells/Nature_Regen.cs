@@ -50,7 +50,7 @@ public class Nature_Regen : MonoBehaviour
                 }
                 healTimer = 0f; // reset timer
 
-                Transform regenTransform = transform.Find("Nature Lvl 3");
+                Transform regenTransform = transform.Find("Regen");
                 if (regenTransform != null)
                 {
                     GameObject regenObject = regenTransform.gameObject;

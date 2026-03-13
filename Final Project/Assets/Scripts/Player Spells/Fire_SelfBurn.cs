@@ -63,7 +63,7 @@ public class Fire_SelfBurn : MonoBehaviour
                     break;
             }
 
-            Transform selfBurnTransform = transform.Find("SelfBurn");
+            Transform selfBurnTransform = transform.Find("Buff");
             if (selfBurnTransform != null)
             {
                 GameObject selfBurnObject = selfBurnTransform.gameObject;

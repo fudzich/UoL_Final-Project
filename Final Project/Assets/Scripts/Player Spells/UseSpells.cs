@@ -13,6 +13,8 @@ public class UseSpells : MonoBehaviour
     public Earth_SpawnWall spawnWall;
     public Earth_Cone cone;
     public Earth_LaunchBoulder launchBoulder;
+    public Water_Heal heal;
+    public Water_Tornado tornado;
 
     public int igniteLevel = 1; // Set the desired level for Ignite spell
     public int blastLevel = 1; // Set the desired level for Ignite spell
@@ -23,6 +25,15 @@ public class UseSpells : MonoBehaviour
     public int wallLevel = 1;
     public int coneLevel = 1;
     public int launchBoulderLevel = 1;
+    public int healLevel = 1;
+    public int tornadoLevel = 1;
+
+
+
+
+
+    private bool isHealCasting = false;
+    private bool isTornadoCasting = false;
 
     void Update()
     {
@@ -141,6 +152,71 @@ public class UseSpells : MonoBehaviour
             {
                 Debug.LogWarning("Fire_Ignition reference is not set.");
             }
+        }
+
+        CastHeal();
+        CastTornado();
+    }
+
+    private void CastHeal()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            // Start casting if not already
+            if (!isHealCasting)
+            {
+                isHealCasting = true;
+            }
+            // Continue casting: heal the player here
+            heal.Heal(healLevel);
+        }
+        else
+        {
+            // If the button is released, stop casting
+            if (isHealCasting)
+            {
+                isHealCasting = false;
+                heal.StopHeal();
+            }
+        }
+
+        // 2. Check if any other key is pressed during casting to interrupt
+        if (isHealCasting && Input.anyKeyDown)
+        {
+            isHealCasting = false;
+            heal.StopHeal();
+
+        }
+    }
+
+    private void CastTornado()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            // Start casting if not already
+            if (!isTornadoCasting)
+            {
+                isTornadoCasting = true;
+                tornado.CastTornado(tornadoLevel);
+            }
+            // Continue casting: heal the player here
+        }
+        else
+        {
+            // If the button is released, stop casting
+            if (isTornadoCasting)
+            {
+                isTornadoCasting = false;
+                tornado.StopTornado();
+            }
+        }
+
+        // 2. Check if any other key is pressed during casting to interrupt
+        if (isTornadoCasting && Input.anyKeyDown)
+        {
+            isTornadoCasting = false;
+            tornado.StopTornado();
+
         }
     }
 }

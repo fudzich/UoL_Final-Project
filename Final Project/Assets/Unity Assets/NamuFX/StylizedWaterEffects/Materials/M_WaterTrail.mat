@@ -21,28 +21,24 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_WaterTrail
-  m_Shader: {fileID: -6465566751694194690, guid: c3b6dd7519323cc4bb41c71f8be5bfa0,
-    type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
+  - _GLOSSYREFLECTIONS_OFF
+  m_InvalidKeywords:
   - _ALPHA_USEDISSOLVE
   - _BLENDBETWEENMASK_MULTIPLY
   - _BUILTIN_ALPHATEST_ON
   - _BUILTIN_AlphaClip
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
   - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses:
   - SHADOWCASTER
   - DepthOnly
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -149,6 +145,7 @@ Material:
     - _CastShadows: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ColorMask: 15
     - _Cull: 0
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -157,7 +154,7 @@ Material:
     - _DissolveTexRot: 0
     - _Dissolve_Falloff: 0.2
     - _Dissolve_Tex_Oneminus: 0
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeWidth: 0
     - _Emission: 1.5
@@ -172,6 +169,7 @@ Material:
     - _MaskPower: 0
     - _MaskTexRot: 0
     - _Metallic: 0
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _OneMinus: 0
     - _Opacity: 1
@@ -185,21 +183,28 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SoftParticlePow: 1
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _SrcBlendAlpha: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _StylizeAmount: 1
     - _StylizedValue: 0
     - _SubmaskRot: 0
     - _Surface: 1
+    - _UVSec: 0
     - _UseAlphaChannel: 1
     - _UseCustomdataOffset: 0
     - _UseCustomdata_Color: 0
     - _UseSoftParticle: 0
+    - _UseUIAlphaClip: 0
     - _Use_Dissolve_Tex: 1
     - _Use_Gradient_Mask: 0
     - _WorkflowMode: 1
     - _ZTest: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

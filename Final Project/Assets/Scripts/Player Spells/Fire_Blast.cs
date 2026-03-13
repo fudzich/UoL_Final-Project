@@ -17,7 +17,8 @@ public class Fire_Blast : MonoBehaviour
     private GameObject effectPrefab;
 
     [SerializeField]
-    private float selfDamage = 20f;
+    private float selfDamage = 10f;
+    PlayerHealthManagement healthManagement;
 
     public void Blast(int lvl)
     {
@@ -52,6 +53,9 @@ public class Fire_Blast : MonoBehaviour
             {
                 Debug.LogWarning("The instantiated object does not have a BlastDamage component.");
             }
+
+            healthManagement = GetComponent<PlayerHealthManagement>();
+            healthManagement.TakeDamage(selfDamage);
         }
         else
         {
