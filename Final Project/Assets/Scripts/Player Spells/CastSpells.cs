@@ -20,6 +20,12 @@ public class CastSpells : MonoBehaviour
     public Water_Tornado waterTornado;
     public Water_Heal waterHeal;
 
+    [SerializeField]
+    public float rechargeTime = 2f;
+
+    private float[] spellCooldownTimers = new float[4];
+    private float[] spellCooldownDurations = new float[4];
+
     private MonoBehaviour[] spellScripts = new MonoBehaviour[4];
 
     private bool isHealCasting = false;
@@ -30,33 +36,50 @@ public class CastSpells : MonoBehaviour
     void Start()
     {
         CheckListOfSpells();
+
+        spellCooldownDurations[0] = 1f; // For spell at index 0
+        spellCooldownDurations[1] = 2f; // For spell at index 1
+        spellCooldownDurations[2] = 3f; // For spell at index 2
+        spellCooldownDurations[3] = 4f; // For spell at index 3
+        for (int i = 0; i < spellCooldownTimers.Length; i++)
+        {
+            spellCooldownTimers[i] = 5f;
+        }
     }
     
     void Update()
     {
-        CheckSpellPress(KeyCode.Alpha1, 1);
-        CheckSpellPress(KeyCode.Alpha2, 2);
-        CheckSpellPress(KeyCode.Alpha3, 3);
+        Debug.Log(spellCooldownTimers[0]);
+        for (int i = 0; i < spellCooldownTimers.Length; i++)
+        {
+            spellCooldownTimers[i] += Time.deltaTime;
+        }
+        CheckSpellPress(KeyCode.Alpha1, 0);
+        CheckSpellPress(KeyCode.Alpha2, 1);
+        CheckSpellPress(KeyCode.Alpha3, 2);
+        CheckSpellPress(KeyCode.Alpha4, 3);
     }
 
     private void CheckSpellPress(KeyCode key, int i)
     {
-        if(spellScripts[i] != null)
+        //Debug.Log(spellCooldownTimers + " " + rechargeTime);
+        if(spellScripts[i] != null && spellCooldownTimers[i] >= spellCooldownDurations[i])
         {
             if(spellScripts[i] == waterBeam)
             {
-                CastBeam(PlayerInfo.spellsLevel[i], key);
+                CastBeam(PlayerInfo.spellsLevel[i], key, i);
             }
             else if (spellScripts[i] == waterTornado)
             {
-                CastTornado(PlayerInfo.spellsLevel[i], key);
+                CastTornado(PlayerInfo.spellsLevel[i], key, i);
             }
             else if (spellScripts[i] == waterHeal)
             {
-                CastHeal(PlayerInfo.spellsLevel[i], key);
+                CastHeal(PlayerInfo.spellsLevel[i], key, i);
             }
             else if (Input.GetKeyDown(key))
             {
+                spellCooldownTimers[i] = 0;
                 switch (spellScripts[i])
                 {
                     case Fire_Ignition fireIgnition:
@@ -210,7 +233,7 @@ public class CastSpells : MonoBehaviour
         }
     }
 
-    private void CastHeal(int lvl, KeyCode key)
+    private void CastHeal(int lvl, KeyCode key, int i)
     {
         if (Input.GetKey(key))
         {
@@ -229,6 +252,7 @@ public class CastSpells : MonoBehaviour
             {
                 isHealCasting = false;
                 waterHeal.StopHeal();
+                spellCooldownTimers[i] = 0;
             }
         }
 
@@ -237,11 +261,12 @@ public class CastSpells : MonoBehaviour
         {
             isHealCasting = false;
             waterHeal.StopHeal();
+            spellCooldownTimers[i] = 0;
 
         }
     }
 
-    private void CastTornado(int lvl, KeyCode key)
+    private void CastTornado(int lvl, KeyCode key, int i)
     {
         if (Input.GetKey(key))
         {
@@ -260,6 +285,7 @@ public class CastSpells : MonoBehaviour
             {
                 isTornadoCasting = false;
                 waterTornado.StopTornado();
+                spellCooldownTimers[i] = 0;
             }
         }
 
@@ -268,11 +294,12 @@ public class CastSpells : MonoBehaviour
         {
             isTornadoCasting = false;
             waterTornado.StopTornado();
+            spellCooldownTimers[i] = 0;
 
         }
     }
 
-    private void CastBeam(int lvl, KeyCode key)
+    private void CastBeam(int lvl, KeyCode key, int i)
     {
         if (Input.GetKey(key))
         {
@@ -293,6 +320,7 @@ public class CastSpells : MonoBehaviour
                 isBeamCasting = false;
                 waterBeam.StopBeam();
                 //Debug.Log("beam destroyed");
+                spellCooldownTimers[i] = 0;
             }
         }
 
@@ -301,6 +329,7 @@ public class CastSpells : MonoBehaviour
         {
             isBeamCasting = false;
             waterBeam.StopBeam();
+            spellCooldownTimers[i] = 0;
 
         }
     }

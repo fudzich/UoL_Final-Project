@@ -17,20 +17,20 @@ public class ChangePlayerElement : MonoBehaviour
         switch (newElementTag)
         {
             case "Water":
-                PlayerInfo.aquiredSpells[1] = "Water_Beam";
-                PlayerInfo.spellsLevel[1] = 1;
+                PlayerInfo.aquiredSpells[0] = "Water_Tornado";
+                PlayerInfo.spellsLevel[0] = 1;
                 break;
             case "Fire":
-                PlayerInfo.aquiredSpells[1] = "Fire_Ignition";
-                PlayerInfo.spellsLevel[1] = 1;
+                PlayerInfo.aquiredSpells[0] = "Fire_Ignition";
+                PlayerInfo.spellsLevel[0] = 1;
                 break;
             case "Earth":
-                PlayerInfo.aquiredSpells[1] = "Earth_Cone";
-                PlayerInfo.spellsLevel[1] = 1;
+                PlayerInfo.aquiredSpells[0] = "Earth_LaunchBoulder";
+                PlayerInfo.spellsLevel[0] = 1;
                 break;
             case "Nature":
-                PlayerInfo.aquiredSpells[1] = "Nature_SpawnFriend";
-                PlayerInfo.spellsLevel[1] = 1;
+                PlayerInfo.aquiredSpells[0] = "Nature_SpawnFriend";
+                PlayerInfo.spellsLevel[0] = 1;
                 break;
         }
     }

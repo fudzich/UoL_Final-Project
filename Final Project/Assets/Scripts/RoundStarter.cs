@@ -15,15 +15,8 @@ public class RoundStarter : MonoBehaviour
         {
             Debug.LogError("EnemySpawner component not found on this GameObject.");
         }
-    }
 
-    void Update()
-    {
-        if (!hasStarted && Input.GetKeyDown(KeyCode.Y))
-        {
-            PlayerInfo.gameStart = true;
-
-            GameObject playerObject = GameObject.Find("Player");
+        GameObject playerObject = GameObject.Find("Player");
 
             if (PlayerInfo.tag != null)
             {
@@ -34,6 +27,13 @@ public class RoundStarter : MonoBehaviour
                 PlayerInfo.tag = "Water";
                 playerObject.tag = PlayerInfo.tag;
             }
+    }
+
+    void Update()
+    {
+        if (!hasStarted && Input.GetKeyDown(KeyCode.Y))
+        {
+            PlayerInfo.gameStart = true;
 
             if (enemySpawner != null)
             {
