@@ -20,6 +20,7 @@ public class TeleportPlayerToGame : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         changePlayerElement.changePlayerTag();
+        changePlayerElement.givePlayerAtackElementSpell();
         SceneManager.LoadScene("SampleScene");
     }
 }

@@ -1,0 +1,358 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CastSpells : MonoBehaviour
+{
+    public Fire_Ignition fireIgnition;
+    public Fire_Blast fireBlast;
+    public Fire_SelfBurn fireSelfBurn;
+    
+    public Nature_SpawnFriend natureSpawnFriend;
+    public Nature_Field natureField;
+    public Nature_Regen natureRegen;
+    
+    public Earth_Cone earthCone;
+    public Earth_LaunchBoulder earchLaunchBoulder;
+    public Earth_SpawnWall earthSpawnWall;
+    
+    public Water_Beam waterBeam;
+    public Water_Tornado waterTornado;
+    public Water_Heal waterHeal;
+
+    private MonoBehaviour[] spellScripts = new MonoBehaviour[4];
+
+    private bool isHealCasting = false;
+    private bool isTornadoCasting = false;
+    private bool isBeamCasting = false;
+    
+    
+    void Start()
+    {
+        CheckListOfSpells();
+    }
+    
+    void Update()
+    {
+        CheckSpellPress(KeyCode.Alpha1, 1);
+        CheckSpellPress(KeyCode.Alpha2, 2);
+        CheckSpellPress(KeyCode.Alpha3, 3);
+    }
+
+    private void CheckSpellPress(KeyCode key, int i)
+    {
+        if(spellScripts[i] != null)
+        {
+            if(spellScripts[i] == waterBeam)
+            {
+                CastBeam(PlayerInfo.spellsLevel[i], key);
+            }
+            else if (spellScripts[i] == waterTornado)
+            {
+                CastTornado(PlayerInfo.spellsLevel[i], key);
+            }
+            else if (spellScripts[i] == waterHeal)
+            {
+                CastHeal(PlayerInfo.spellsLevel[i], key);
+            }
+            else if (Input.GetKeyDown(key))
+            {
+                switch (spellScripts[i])
+                {
+                    case Fire_Ignition fireIgnition:
+                        CastIgnite(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Fire_Blast fireBlast:
+                        CastBlast(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Fire_SelfBurn fireSelfBurn:
+                        CastSelfBurn(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Nature_SpawnFriend natureSpawnFriend:
+                        CastSpawnFriend(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Nature_Field natureField:
+                        CastField(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Nature_Regen natureRegen:
+                        CastRegen(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Earth_Cone earthCone:
+                        CastCone(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Earth_LaunchBoulder earchLaunchBoulder:
+                        CastLaunchBoulder(PlayerInfo.spellsLevel[i]);
+                        break;
+                    case Earth_SpawnWall earthSpawnWall:
+                        CastSpawnWall(PlayerInfo.spellsLevel[i]);
+                        break;
+                }
+                
+            }
+            
+        }
+    }
+
+    private void CastIgnite(int lvl)
+    {
+        if (fireIgnition != null)
+        {
+            //Debug.Log("Cast");
+            fireIgnition.Ignite(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("fireIgnition reference is not set.");
+        }
+    }
+
+    private void CastBlast(int lvl)
+    {
+        if (fireBlast != null)
+        {
+            //Debug.Log("Cast");
+            fireBlast.Blast(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("fireBlast reference is not set.");
+        }
+    }
+
+    private void CastSelfBurn(int lvl)
+    {
+        if (fireSelfBurn != null)
+        {
+            //Debug.Log("Cast");
+            fireSelfBurn.SelfBurn(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("fireSelfBurn reference is not set.");
+        }
+    }
+
+    private void CastSpawnFriend(int lvl)
+    {
+        if (natureSpawnFriend != null)
+        {
+            //Debug.Log("Cast");
+            natureSpawnFriend.SpawnFriend(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("natureSpawnFriend reference is not set.");
+        }
+    }
+
+    private void CastRegen(int lvl)
+    {
+        if (natureRegen != null)
+        {
+            //Debug.Log("Cast");
+            natureRegen.Regen(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("natureRegen reference is not set.");
+        }
+    }
+
+    private void CastField(int lvl)
+    {
+        if (natureField != null)
+        {
+            //Debug.Log("Cast");
+            natureField.Field(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("natureField reference is not set.");
+        }
+    }
+
+    private void CastCone(int lvl)
+    {
+        if (earthCone != null)
+        {
+            //Debug.Log("Cast");
+            earthCone.SpawnCone(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("earthCone reference is not set.");
+        }
+    }
+
+    private void CastLaunchBoulder(int lvl)
+    {
+        if (earchLaunchBoulder != null)
+        {
+            //Debug.Log("Cast");
+            earchLaunchBoulder.LaunchBoulder(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("earchLaunchBoulder reference is not set.");
+        }
+    }
+
+    private void CastSpawnWall(int lvl)
+    {
+        if (earthSpawnWall != null)
+        {
+            //Debug.Log("Cast");
+            earthSpawnWall.SpawnWall(lvl);
+        }
+        else
+        {
+            Debug.LogWarning("earthSpawnWall reference is not set.");
+        }
+    }
+
+    private void CastHeal(int lvl, KeyCode key)
+    {
+        if (Input.GetKey(key))
+        {
+            // Start casting if not already
+            if (!isHealCasting)
+            {
+                isHealCasting = true;
+            }
+            // Continue casting: heal the player here
+            waterHeal.Heal(lvl);
+        }
+        else
+        {
+            // If the button is released, stop casting
+            if (isHealCasting)
+            {
+                isHealCasting = false;
+                waterHeal.StopHeal();
+            }
+        }
+
+        // 2. Check if any other key is pressed during casting to interrupt
+        if (isHealCasting && Input.anyKeyDown)
+        {
+            isHealCasting = false;
+            waterHeal.StopHeal();
+
+        }
+    }
+
+    private void CastTornado(int lvl, KeyCode key)
+    {
+        if (Input.GetKey(key))
+        {
+            // Start casting if not already
+            if (!isTornadoCasting)
+            {
+                isTornadoCasting = true;
+                waterTornado.CastTornado(lvl);
+            }
+            // Continue casting: heal the player here
+        }
+        else
+        {
+            // If the button is released, stop casting
+            if (isTornadoCasting)
+            {
+                isTornadoCasting = false;
+                waterTornado.StopTornado();
+            }
+        }
+
+        // 2. Check if any other key is pressed during casting to interrupt
+        if (isTornadoCasting && Input.anyKeyDown)
+        {
+            isTornadoCasting = false;
+            waterTornado.StopTornado();
+
+        }
+    }
+
+    private void CastBeam(int lvl, KeyCode key)
+    {
+        if (Input.GetKey(key))
+        {
+            // Start casting if not already
+            if (!isBeamCasting)
+            {
+                isBeamCasting = true;
+                waterBeam.FireBeam(lvl);
+                //Debug.Log("beam cast");
+            }
+            // Continue casting: heal the player here
+        }
+        else
+        {
+            // If the button is released, stop casting
+            if (isBeamCasting)
+            {
+                isBeamCasting = false;
+                waterBeam.StopBeam();
+                //Debug.Log("beam destroyed");
+            }
+        }
+
+        // 2. Check if any other key is pressed during casting to interrupt
+        if (isBeamCasting && Input.anyKeyDown)
+        {
+            isBeamCasting = false;
+            waterBeam.StopBeam();
+
+        }
+    }
+    
+    public void CheckListOfSpells()
+    {
+        //foreach(string spellName in PlayerInfo.aquiredSpells)
+        for (int i = 0; i < PlayerInfo.aquiredSpells.Length; i++)
+        {
+            switch (PlayerInfo.aquiredSpells[i])
+            {
+                case "Fire_Ignition":
+                    spellScripts[i] = fireIgnition;
+                    break;
+                case "Fire_Blast":
+                    spellScripts[i] = fireBlast;
+                    break;
+                case "Fire_SelfBurn":
+                    spellScripts[i] = fireSelfBurn;
+                    break;
+                
+                case "Nature_SpawnFriend":
+                    spellScripts[i] = natureSpawnFriend;
+                    break;
+                case "Nature_Regen":
+                    spellScripts[i] = natureRegen;
+                    break;
+                case "Nature_Field":
+                    spellScripts[i] = natureField;
+                    break;
+
+                case "Earth_SpawnWall":
+                    spellScripts[i] = earthSpawnWall;
+                    break;
+                case "Earth_Cone":
+                    spellScripts[i] = earthCone;
+                    break;
+                case "Earth_LaunchBoulder":
+                    spellScripts[i] = earchLaunchBoulder;
+                    break;
+
+                case "Water_Beam":
+                    spellScripts[i] = waterBeam;
+                    break;
+                case "Water_Tornado":
+                    spellScripts[i] = waterTornado;
+                    break;
+                case "Water_Heal":
+                    spellScripts[i] = waterHeal;
+                    break;
+
+            }
+        }
+    }
+}

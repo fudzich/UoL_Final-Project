@@ -11,4 +11,27 @@ public class ChangePlayerElement : MonoBehaviour
     {
         PlayerInfo.tag = newElementTag;
     }
+
+    public void givePlayerAtackElementSpell()
+    {
+        switch (newElementTag)
+        {
+            case "Water":
+                PlayerInfo.aquiredSpells[1] = "Water_Beam";
+                PlayerInfo.spellsLevel[1] = 1;
+                break;
+            case "Fire":
+                PlayerInfo.aquiredSpells[1] = "Fire_Ignition";
+                PlayerInfo.spellsLevel[1] = 1;
+                break;
+            case "Earth":
+                PlayerInfo.aquiredSpells[1] = "Earth_Cone";
+                PlayerInfo.spellsLevel[1] = 1;
+                break;
+            case "Nature":
+                PlayerInfo.aquiredSpells[1] = "Nature_SpawnFriend";
+                PlayerInfo.spellsLevel[1] = 1;
+                break;
+        }
+    }
 }

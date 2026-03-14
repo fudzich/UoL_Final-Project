@@ -12,4 +12,9 @@ public static class PlayerInfo
     public static bool gameStart = false;
 
     public static float dmgIncrease = 1;
+
+    public static string isOnTile;
+
+    public static string[] aquiredSpells = new string[4];
+    public static int[] spellsLevel = new int[4];
 }
