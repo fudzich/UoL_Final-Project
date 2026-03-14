@@ -733,6 +733,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2962596159101393676}
   - component: {fileID: 3541680355540327752}
+  - component: {fileID: 4521593192898415942}
+  - component: {fileID: 3337732172531092511}
   m_Layer: 0
   m_Name: Earth Tile
   m_TagString: Untagged
@@ -794,6 +796,32 @@ MonoBehaviour:
   - {fileID: 1096601609267590236}
   - {fileID: 2369857416625730448}
   - {fileID: 9041880548065725268}
+--- !u!65 &4521593192898415942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9111793197592102596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.281474, y: 1.6818297, z: 5.2621756}
+  m_Center: {x: 0.86009014, y: 0.34091485, z: -0.47469568}
+--- !u!114 &3337732172531092511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9111793197592102596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4c3675a57cebc4b91ea0d9e683e99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: Earth
 --- !u!1 &9118933888628509904
 GameObject:
   m_ObjectHideFlags: 0

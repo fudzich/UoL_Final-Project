@@ -65,49 +65,85 @@ public class CastSpells : MonoBehaviour
         //Debug.Log(spellCooldownTimers + " " + rechargeTime);
         if(spellScripts[i] != null && spellCooldownTimers[i] >= spellCooldownDurations[i])
         {
-            if(spellScripts[i] == waterBeam)
+            if(spellScripts[i] == waterBeam && PlayerInfo.isOnTile == "Water")
             {
                 CastBeam(PlayerInfo.spellsLevel[i], key, i);
             }
-            else if (spellScripts[i] == waterTornado)
+            else if (spellScripts[i] == waterTornado && PlayerInfo.isOnTile == "Water")
             {
                 CastTornado(PlayerInfo.spellsLevel[i], key, i);
             }
-            else if (spellScripts[i] == waterHeal)
+            else if (spellScripts[i] == waterHeal && PlayerInfo.isOnTile == "Water")
             {
                 CastHeal(PlayerInfo.spellsLevel[i], key, i);
             }
             else if (Input.GetKeyDown(key))
             {
-                spellCooldownTimers[i] = 0;
                 switch (spellScripts[i])
                 {
                     case Fire_Ignition fireIgnition:
-                        CastIgnite(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Fire")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastIgnite(PlayerInfo.spellsLevel[i]);
+
+                        }
                         break;
                     case Fire_Blast fireBlast:
-                        CastBlast(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Fire")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastBlast(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                     case Fire_SelfBurn fireSelfBurn:
-                        CastSelfBurn(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Fire")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastSelfBurn(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                     case Nature_SpawnFriend natureSpawnFriend:
-                        CastSpawnFriend(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Nature")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastSpawnFriend(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                     case Nature_Field natureField:
-                        CastField(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Nature")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastField(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                     case Nature_Regen natureRegen:
-                        CastRegen(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Nature")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastRegen(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                     case Earth_Cone earthCone:
-                        CastCone(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Earth")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastCone(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                     case Earth_LaunchBoulder earchLaunchBoulder:
-                        CastLaunchBoulder(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Earth")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastLaunchBoulder(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                     case Earth_SpawnWall earthSpawnWall:
-                        CastSpawnWall(PlayerInfo.spellsLevel[i]);
+                        if(PlayerInfo.isOnTile == "Earth")
+                        {
+                            spellCooldownTimers[i] = 0;
+                            CastSpawnWall(PlayerInfo.spellsLevel[i]);
+                        }
                         break;
                 }
                 

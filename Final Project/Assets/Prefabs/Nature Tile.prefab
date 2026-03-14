@@ -3162,7 +3162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4749359662366536873, guid: 863fd6e288eb46e4cbd2d09909f87856,
     type: 3}
-  projectileTag: Nature
   projectileMaterial: {fileID: 2100000, guid: 34955dbf21a75984dbe57300abbdf73b, type: 2}
 --- !u!136 &7591373800955209356
 CapsuleCollider:
@@ -3482,6 +3481,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3837391474242778513}
   - component: {fileID: 5693242330329635586}
+  - component: {fileID: 4911815544840347203}
+  - component: {fileID: 3249268558042926175}
   m_Layer: 0
   m_Name: Nature Tile
   m_TagString: Untagged
@@ -3532,6 +3533,32 @@ MonoBehaviour:
   - {fileID: 7919274297369690239}
   - {fileID: 6327296260986600344}
   - {fileID: 217526162065587484}
+--- !u!65 &4911815544840347203
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075138622642120793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.1707087, y: 1.6409734, z: 4.886712}
+  m_Center: {x: 0.7945604, y: 0.32048684, z: -0.33636427}
+--- !u!114 &3249268558042926175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075138622642120793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4c3675a57cebc4b91ea0d9e683e99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: Nature
 --- !u!1 &7245149819078519298
 GameObject:
   m_ObjectHideFlags: 0

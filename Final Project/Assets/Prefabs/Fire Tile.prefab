@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 8048803315520588487}
   - component: {fileID: 6361920186537956785}
   - component: {fileID: 6841302166530418285}
+  - component: {fileID: 638541900289217594}
   m_Layer: 0
   m_Name: Fire Tile
   m_TagString: Untagged
@@ -326,6 +327,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireDamage: 2
+--- !u!114 &638541900289217594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789051570033490927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4c3675a57cebc4b91ea0d9e683e99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: Fire
 --- !u!1 &1972545349979009713
 GameObject:
   m_ObjectHideFlags: 0
