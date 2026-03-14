@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class TeleportPlayerToGame : MonoBehaviour
 {
     private ChangePlayerElement changePlayerElement;
+    //[SerializeField] 
+    //private GameObject portalPrefab;
 
     void Start()
     {
@@ -22,5 +24,9 @@ public class TeleportPlayerToGame : MonoBehaviour
         changePlayerElement.changePlayerTag();
         changePlayerElement.givePlayerAtackElementSpell();
         SceneManager.LoadScene("SampleScene");
+        //if (portalPrefab != null)
+        //{
+        //    Instantiate(portalPrefab, transform.position, Quaternion.identity);
+        //}
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Eart_player
   - Nature_palyer
   - Water_player
+  - Mountain
   layers:
   - Default
   - TransparentFX

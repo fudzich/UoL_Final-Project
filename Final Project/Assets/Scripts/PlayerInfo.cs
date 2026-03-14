@@ -15,6 +15,8 @@ public static class PlayerInfo
 
     public static string isOnTile;
 
+    public static float playerBias = 0f;
+
     public static string[] aquiredSpells = new string[4];
     public static int[] spellsLevel = new int[4];
 }

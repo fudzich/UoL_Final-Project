@@ -6,13 +6,23 @@ public class BulletDamage : MonoBehaviour
 {
     [SerializeField] private float bulletDamage = 10f;
 
+    void Start()
+    {
+        if(gameObject.tag != PlayerInfo.tag)
+            bulletDamage+= PlayerInfo.playerBias;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // Avoid damaging objects with the same tag as the bullet
         if (other.gameObject.tag != this.tag)
         {
             // Try to get the HealthManagement component from the other object
-            if(other.name == "Player")
+            if(other.name == "Mountain Range")
+            {
+                Destroy(gameObject);
+            }
+            else if(other.name == "Player")
             {
                 var health = other.GetComponent<PlayerHealthManagement>();
                 if (health != null)

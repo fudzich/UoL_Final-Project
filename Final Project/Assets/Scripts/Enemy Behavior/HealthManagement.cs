@@ -9,7 +9,10 @@ public class HealthManagement : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        if(gameObject.tag != PlayerInfo.tag)
+            currentHealth = maxHealth+PlayerInfo.playerBias;
+        else
+            currentHealth = maxHealth;
     }
 
     // Public method to reduce health

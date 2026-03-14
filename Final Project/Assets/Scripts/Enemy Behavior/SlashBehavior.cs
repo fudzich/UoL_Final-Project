@@ -9,6 +9,8 @@ public class SlashBehavior : MonoBehaviour
 
     void Start()
     {
+        if(gameObject.tag != PlayerInfo.tag)
+            meleeDamage+= PlayerInfo.playerBias;
         Destroy(gameObject, lifetime);
     }
 
