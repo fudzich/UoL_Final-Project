@@ -364,6 +364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &552871918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,6 +839,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &883163182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -976,6 +984,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &885384258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,6 +1113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &921777699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,6 +1448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &1094829553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,6 +1534,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1543400396}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1158731265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1613665020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1197718782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1571,12 @@ Transform:
   m_Father: {fileID: 122722808}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1209677991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1223156815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1223156815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1690,6 +1722,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1618772257}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1348885859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 682714375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348885863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348885859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2248ad3bf8bcff742b2406d07e3ed3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1348885864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348885859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2248ad3bf8bcff742b2406d07e3ed3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1348885865
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348885859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.0035871
+  m_Height: 5.6900997
+  m_Direction: 1
+  m_Center: {x: -0.02375853, y: 0.005049944, z: 0.031867146}
 --- !u!1 &1353356114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,6 +1815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &1353356117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,6 +1989,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b348568ff60c1e2438fda229231ed3d4, type: 3}
+--- !u!1 &1428987930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 800637060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1428987934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428987930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2248ad3bf8bcff742b2406d07e3ed3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1428987935
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428987930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.0035871
+  m_Height: 5.6900997
+  m_Direction: 1
+  m_Center: {x: -0.02375853, y: 0.005049944, z: 0.031867146}
 --- !u!4 &1469731067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3191314612656577331, guid: b163284f076e4674dbf421432f5de02e,
@@ -1921,6 +2033,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1613665020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1529114144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158731265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2248ad3bf8bcff742b2406d07e3ed3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &1529114145
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158731265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.0035871
+  m_Height: 5.6900997
+  m_Direction: 1
+  m_Center: {x: -0.02375853, y: 0.005049944, z: 0.031867146}
 --- !u!1001 &1543400396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2596,6 +2734,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &1867901105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2678,6 +2820,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1223156815}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2012089050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209677991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2248ad3bf8bcff742b2406d07e3ed3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &2012089051
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209677991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.0035871
+  m_Height: 5.6900997
+  m_Direction: 1
+  m_Center: {x: -0.02375853, y: 0.005049944, z: 0.031867146}
 --- !u!1 &2134275169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2958,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1372c970924e32f41a21369b17c5654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naturePortal: {fileID: 1348885859}
+  waterPortal: {fileID: 1428987930}
+  firePortal: {fileID: 1158731265}
+  earthPortal: {fileID: 1209677991}
 --- !u!114 &2134275175
 MonoBehaviour:
   m_ObjectHideFlags: 0

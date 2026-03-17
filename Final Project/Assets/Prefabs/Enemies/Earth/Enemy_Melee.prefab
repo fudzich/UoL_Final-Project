@@ -434,6 +434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 120
   currentHealth: 0
+  damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
+    type: 3}
 --- !u!114 &4266104154094877486
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class TeleportPlayerToGame : MonoBehaviour
 {
     private ChangePlayerElement changePlayerElement;
-    //[SerializeField] 
-    //private GameObject portalPrefab;
+    [SerializeField]
+    private GameObject naturePortal;
+    [SerializeField]
+    private GameObject waterPortal;
+    [SerializeField]
+    private GameObject firePortal;
+    [SerializeField]
+    private GameObject earthPortal;
+    private GameObject activePortal;
 
     void Start()
     {
@@ -23,10 +30,44 @@ public class TeleportPlayerToGame : MonoBehaviour
     {
         changePlayerElement.changePlayerTag();
         changePlayerElement.givePlayerAtackElementSpell();
-        SceneManager.LoadScene("SampleScene");
-        //if (portalPrefab != null)
-        //{
-        //    Instantiate(portalPrefab, transform.position, Quaternion.identity);
-        //}
+        switch (this.gameObject.name)
+        {
+            case "Nature":
+                ActivatePortal(naturePortal);
+                break;
+            case "Water":
+                ActivatePortal(waterPortal);
+                break;
+            case "Fire":
+                ActivatePortal(firePortal);
+                break;
+            case "Earth":
+                ActivatePortal(earthPortal);
+                break;
+            default:
+                Debug.LogWarning("Unknown portal type: " + this.gameObject.name);
+                break;
+        }
+
+    }
+
+    private void ActivatePortal(GameObject portal)
+    {
+        // Deactivate all portals first
+        naturePortal.SetActive(false);
+        waterPortal.SetActive(false);
+        firePortal.SetActive(false);
+        earthPortal.SetActive(false);
+
+        // Activate the selected portal
+        if (portal != null)
+        {
+            portal.SetActive(true);
+            activePortal = portal;
+        }
+        else
+        {
+            Debug.LogWarning("Selected portal is not assigned.");
+        }
     }
 }

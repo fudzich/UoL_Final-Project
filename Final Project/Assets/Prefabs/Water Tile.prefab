@@ -402,6 +402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
+    type: 3}
 --- !u!114 &1450870270969715616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,6 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  damageBar: {fileID: 0}
 --- !u!114 &8169220227640660032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  damageBar: {fileID: 0}
 --- !u!114 &1683409365587698995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,6 +1475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
+    type: 3}
 --- !u!136 &6350090189264181540
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2858,6 +2864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  damageBar: {fileID: 0}
 --- !u!1001 &7908604321285438029
 PrefabInstance:
   m_ObjectHideFlags: 0

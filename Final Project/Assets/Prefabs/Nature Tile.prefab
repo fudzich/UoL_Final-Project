@@ -462,6 +462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
+    type: 3}
+  heightOffset: 3
 --- !u!1 &325089999334913684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,6 +3133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
+    type: 3}
+  heightOffset: 3
 --- !u!114 &7111464286357766889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5450,6 +5456,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
+    type: 3}
+  heightOffset: 4
 --- !u!1001 &3641482702290176304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5943,6 +5952,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
+    type: 3}
+  heightOffset: 3
 --- !u!4 &5806986913923840202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1390260638832182502, guid: 05ea3cfde14450645ab00fa2671e783b,
