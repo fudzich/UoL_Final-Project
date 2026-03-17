@@ -50,22 +50,30 @@ public class Water_Tornado : MonoBehaviour
             //tornado.transform.localScale = Vector3.one;
             //tornado.transform.rotation = Quaternion.identity;
         }
-        tornado.tag = gameObject.tag;
-        TornadoDamage tornadoDamage = tornado.GetComponent<TornadoDamage>();
-        switch (lvl)
+        if (tornado != null)
         {
-            case 1:
-                tornadoDamage.damage = dmgLVL1 * PlayerInfo.dmgIncrease;
-                break;
-            case 2:
-                tornadoDamage.damage = dmgLVL2 * PlayerInfo.dmgIncrease;
-                break;
-            case 3:
-                tornadoDamage.damage = dmgLVL3 * PlayerInfo.dmgIncrease;
-                break;
-            default:
-                tornadoDamage.damage = dmgLVL3 * PlayerInfo.dmgIncrease;
-                break;
+            tornado.tag = gameObject.tag;
+
+            TornadoDamage tornadoDamage = tornado.GetComponent<TornadoDamage>();
+            switch (lvl)
+            {
+                case 1:
+                    tornadoDamage.damage = dmgLVL1 * PlayerInfo.dmgIncrease;
+                    break;
+                case 2:
+                    tornadoDamage.damage = dmgLVL2 * PlayerInfo.dmgIncrease;
+                    break;
+                case 3:
+                    tornadoDamage.damage = dmgLVL3 * PlayerInfo.dmgIncrease;
+                    break;
+                default:
+                    tornadoDamage.damage = dmgLVL3 * PlayerInfo.dmgIncrease;
+                    break;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Failed to instantiate tornado prefab.");
         }
     }
 

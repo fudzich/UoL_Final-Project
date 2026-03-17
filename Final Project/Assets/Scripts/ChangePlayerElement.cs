@@ -6,10 +6,13 @@ public class ChangePlayerElement : MonoBehaviour
 {
 
     [SerializeField] private string newElementTag;
+    [SerializeField]
+    private GameObject player;
     // Start is called before the first frame update
     public void changePlayerTag()
     {
         PlayerInfo.tag = newElementTag;
+        player.tag = PlayerInfo.tag;
     }
 
     public void givePlayerAtackElementSpell()

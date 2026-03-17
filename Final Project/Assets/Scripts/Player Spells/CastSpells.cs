@@ -49,7 +49,7 @@ public class CastSpells : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(spellCooldownTimers[0]);
+        //Debug.Log(spellCooldownTimers[0]);
         for (int i = 0; i < spellCooldownTimers.Length; i++)
         {
             spellCooldownTimers[i] += Time.deltaTime;

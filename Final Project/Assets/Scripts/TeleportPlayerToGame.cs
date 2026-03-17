@@ -16,6 +16,16 @@ public class TeleportPlayerToGame : MonoBehaviour
     private GameObject earthPortal;
     private GameObject activePortal;
 
+    [SerializeField]
+    private GameObject natureTile;
+    [SerializeField]
+    private GameObject waterTile;
+    [SerializeField]
+    private GameObject fireTile;
+    [SerializeField]
+    private GameObject earthTile;
+    private GameObject activeTile;
+
     void Start()
     {
         // Get the ProjectileSpawner component attached to this gameObject
@@ -34,19 +44,46 @@ public class TeleportPlayerToGame : MonoBehaviour
         {
             case "Nature":
                 ActivatePortal(naturePortal);
+                ActivateTile(natureTile);
                 break;
             case "Water":
                 ActivatePortal(waterPortal);
+                ActivateTile(waterTile);
                 break;
             case "Fire":
                 ActivatePortal(firePortal);
+                ActivateTile(fireTile);
                 break;
             case "Earth":
                 ActivatePortal(earthPortal);
+                ActivateTile(earthTile);
                 break;
             default:
                 Debug.LogWarning("Unknown portal type: " + this.gameObject.name);
                 break;
+        }
+
+        GameObject playerObject = GameObject.Find("Player");
+
+        if (playerObject != null)
+        {
+            //Debug.Log("Found Player");
+            // Get the CastSpells component
+            CastSpells castSpellsComponent = playerObject.GetComponent<CastSpells>();
+            
+            if (castSpellsComponent != null)
+            {
+                // Call the CheckListOfSpells method
+                castSpellsComponent.CheckListOfSpells();
+            }
+            else
+            {
+                Debug.LogError("CastSpells component not found on Player object.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Player object not found in the scene.");
         }
 
     }
@@ -64,6 +101,26 @@ public class TeleportPlayerToGame : MonoBehaviour
         {
             portal.SetActive(true);
             activePortal = portal;
+        }
+        else
+        {
+            Debug.LogWarning("Selected portal is not assigned.");
+        }
+    }
+
+    private void ActivateTile(GameObject tile)
+    {
+        // Deactivate all portals first
+        natureTile.SetActive(false);
+        waterTile.SetActive(false);
+        fireTile.SetActive(false);
+        earthTile.SetActive(false);
+
+        // Activate the selected portal
+        if (tile != null)
+        {
+            tile.SetActive(true);
+            activeTile = tile;
         }
         else
         {
