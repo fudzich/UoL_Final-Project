@@ -19,4 +19,8 @@ public static class PlayerInfo
 
     public static string[] aquiredSpells = new string[4];
     public static int[] spellsLevel = new int[4];
+
+
+    public static string[] savedSpellsState = new string[4];
+    public static int[] savedLevelState = new int[4];
 }
