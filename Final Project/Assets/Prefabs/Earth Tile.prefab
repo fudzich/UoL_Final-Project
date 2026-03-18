@@ -184,6 +184,7 @@ MonoBehaviour:
   maxHealth: 200
   currentHealth: 0
   damageBar: {fileID: 0}
+  heightOffset: 3
 --- !u!1 &2052602043942653902
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +406,7 @@ MonoBehaviour:
   currentHealth: 0
   damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
     type: 3}
+  heightOffset: 3
 --- !u!114 &4530476834545568038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +717,7 @@ MonoBehaviour:
   currentHealth: 0
   damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
     type: 3}
+  heightOffset: 3
 --- !u!65 &1302610931660638677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -812,8 +815,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.281474, y: 1.6818297, z: 5.2621756}
-  m_Center: {x: 0.86009014, y: 0.34091485, z: -0.47469568}
+  m_Size: {x: 5.8667603, y: 1.6818297, z: 5.702645}
+  m_Center: {x: 0.9024773, y: 0.34091485, z: -0.61592984}
 --- !u!114 &3337732172531092511
 MonoBehaviour:
   m_ObjectHideFlags: 0
