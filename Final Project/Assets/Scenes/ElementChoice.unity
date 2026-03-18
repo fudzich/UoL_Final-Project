@@ -5722,7 +5722,7 @@ PrefabInstance:
     - target: {fileID: 8992490372598327338, guid: 7367c93a1e091f8439448db2ec09d2ab,
         type: 3}
       propertyPath: m_Name
-      value: Book1 (3)
+      value: Book3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7367c93a1e091f8439448db2ec09d2ab, type: 3}
@@ -12773,12 +12773,12 @@ PrefabInstance:
         type: 3}
       propertyPath: books.Array.data[2]
       value: 
-      objectReference: {fileID: 1560449112}
+      objectReference: {fileID: 662120251}
     - target: {fileID: 1155837600069888908, guid: b348568ff60c1e2438fda229231ed3d4,
         type: 3}
       propertyPath: books.Array.data[3]
       value: 
-      objectReference: {fileID: 662120251}
+      objectReference: {fileID: 1560449112}
     m_RemovedComponents:
     - {fileID: 1930561305, guid: b348568ff60c1e2438fda229231ed3d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b348568ff60c1e2438fda229231ed3d4, type: 3}
@@ -13859,7 +13859,7 @@ PrefabInstance:
     - target: {fileID: 8992490372598327338, guid: 7367c93a1e091f8439448db2ec09d2ab,
         type: 3}
       propertyPath: m_Name
-      value: Book1 (2)
+      value: Book 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7367c93a1e091f8439448db2ec09d2ab, type: 3}
@@ -16021,7 +16021,7 @@ PrefabInstance:
     - target: {fileID: 8992490372598327338, guid: 7367c93a1e091f8439448db2ec09d2ab,
         type: 3}
       propertyPath: m_Name
-      value: Book1 (1)
+      value: Book 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7367c93a1e091f8439448db2ec09d2ab, type: 3}
@@ -17907,7 +17907,7 @@ PrefabInstance:
     - target: {fileID: 8992490372598327338, guid: 7367c93a1e091f8439448db2ec09d2ab,
         type: 3}
       propertyPath: m_Name
-      value: Book1
+      value: Book 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7367c93a1e091f8439448db2ec09d2ab, type: 3}

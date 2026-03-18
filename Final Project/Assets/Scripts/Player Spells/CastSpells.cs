@@ -431,14 +431,28 @@ public class CastSpells : MonoBehaviour
     {
         for(int i = 0; i < books.Length; i++)
         {
-            if(spellScripts[i] != null && spellCooldownTimers[i] >= spellCooldownDurations[i])
+            MeshRenderer meshRenderer = books[i].GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
             {
-                books[i].SetActive(true);
+                if (spellScripts[i] != null && spellCooldownTimers[i] >= spellCooldownDurations[i])
+                {
+                    SetMeshRendererActive(books[i], true);
+                }
+                else
+                {
+                    SetMeshRendererActive(books[i], false);
+                }
             }
-            else
-            {
-                books[i].SetActive(false);
-            }
+        }
+    }
+
+    private void SetMeshRendererActive(GameObject obj, bool isActive)
+    {
+        // Get all MeshRenderers in the object and its children
+        MeshRenderer[] meshRenderers = obj.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer renderer in meshRenderers)
+        {
+            renderer.enabled = isActive;
         }
     }
 }
