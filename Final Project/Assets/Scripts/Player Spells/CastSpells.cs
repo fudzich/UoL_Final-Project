@@ -31,6 +31,7 @@ public class CastSpells : MonoBehaviour
     private bool isHealCasting = false;
     private bool isTornadoCasting = false;
     private bool isBeamCasting = false;
+    private bool waterCasting = false;
 
     public GameObject[] books;
     
@@ -69,7 +70,7 @@ public class CastSpells : MonoBehaviour
     private void CheckSpellPress(KeyCode key, int i)
     {
         //Debug.Log(spellCooldownTimers + " " + rechargeTime);
-        if(spellScripts[i] != null && spellCooldownTimers[i] >= spellCooldownDurations[i])
+        if(spellScripts[i] != null && (spellCooldownTimers[i] >= spellCooldownDurations[i] || waterCasting))
         {
             if(spellScripts[i] == waterBeam && PlayerInfo.isOnTile == "Water")
             {
@@ -277,6 +278,7 @@ public class CastSpells : MonoBehaviour
 
     private void CastHeal(int lvl, KeyCode key, int i)
     {
+        waterCasting = true;
         if (Input.GetKey(key))
         {
             // Start casting if not already
@@ -292,6 +294,7 @@ public class CastSpells : MonoBehaviour
             // If the button is released, stop casting
             if (isHealCasting)
             {
+                waterCasting = false;
                 isHealCasting = false;
                 waterHeal.StopHeal();
                 spellCooldownTimers[i] = 0;
@@ -299,8 +302,9 @@ public class CastSpells : MonoBehaviour
         }
 
         // 2. Check if any other key is pressed during casting to interrupt
-        if (isHealCasting && Input.anyKeyDown)
+        if (isHealCasting && Input.anyKeyDown && !Input.GetKeyDown(key))
         {
+            waterCasting = false;
             isHealCasting = false;
             waterHeal.StopHeal();
             spellCooldownTimers[i] = 0;
@@ -310,6 +314,7 @@ public class CastSpells : MonoBehaviour
 
     private void CastTornado(int lvl, KeyCode key, int i)
     {
+        //waterCasting = true;
         if (Input.GetKey(key))
         {
             // Start casting if not already
@@ -325,6 +330,7 @@ public class CastSpells : MonoBehaviour
             // If the button is released, stop casting
             if (isTornadoCasting)
             {
+                //waterCasting = false;
                 isTornadoCasting = false;
                 waterTornado.StopTornado();
                 spellCooldownTimers[i] = 0;
@@ -332,9 +338,10 @@ public class CastSpells : MonoBehaviour
         }
 
         // 2. Check if any other key is pressed during casting to interrupt
-        if (isTornadoCasting && Input.anyKeyDown)
+        if (isTornadoCasting && Input.anyKeyDown && !Input.GetKeyDown(key))
         {
-            isTornadoCasting = false;
+            //waterCasting = false;
+           isTornadoCasting = false;
             waterTornado.StopTornado();
             spellCooldownTimers[i] = 0;
 
@@ -343,6 +350,7 @@ public class CastSpells : MonoBehaviour
 
     private void CastBeam(int lvl, KeyCode key, int i)
     {
+        waterCasting = true;
         if (Input.GetKey(key))
         {
             // Start casting if not already
@@ -359,6 +367,7 @@ public class CastSpells : MonoBehaviour
             // If the button is released, stop casting
             if (isBeamCasting)
             {
+                waterCasting = false;
                 isBeamCasting = false;
                 waterBeam.StopBeam();
                 //Debug.Log("beam destroyed");
@@ -367,8 +376,9 @@ public class CastSpells : MonoBehaviour
         }
 
         // 2. Check if any other key is pressed during casting to interrupt
-        if (isBeamCasting && Input.anyKeyDown)
+        if (isBeamCasting && Input.anyKeyDown && !Input.GetKeyDown(key))
         {
+            waterCasting = false;
             isBeamCasting = false;
             waterBeam.StopBeam();
             spellCooldownTimers[i] = 0;
