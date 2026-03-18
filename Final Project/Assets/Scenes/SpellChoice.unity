@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 51959442}
   - component: {fileID: 51959444}
   - component: {fileID: 51959443}
+  - component: {fileID: 51959445}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -331,6 +332,18 @@ MonoBehaviour:
   - Nature_SpawnFriend
   - Nature_Field
   - Nature_Regen
+--- !u!114 &51959445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51959438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e739bfde447c6e441b80a6527ab22bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &63422401
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -51,17 +51,19 @@ public class CastSpells : MonoBehaviour
     
     void Update()
     {
-        //Debug.Log(spellCooldownTimers[0]);
+        Debug.Log(PlayerInfo.isOnTile);
         for (int i = 0; i < spellCooldownTimers.Length; i++)
         {
             spellCooldownTimers[i] += Time.deltaTime;
         }
         ShowRechargedBooks();
-        
-        CheckSpellPress(KeyCode.Alpha1, 0);
-        CheckSpellPress(KeyCode.Alpha2, 1);
-        CheckSpellPress(KeyCode.Alpha3, 2);
-        CheckSpellPress(KeyCode.Alpha4, 3);
+        if (PlayerInfo.canCast)
+        {
+            CheckSpellPress(KeyCode.Alpha1, 0);
+            CheckSpellPress(KeyCode.Alpha2, 1);
+            CheckSpellPress(KeyCode.Alpha3, 2);
+            CheckSpellPress(KeyCode.Alpha4, 3);
+        }
     }
 
     private void CheckSpellPress(KeyCode key, int i)

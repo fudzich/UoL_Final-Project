@@ -22,7 +22,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Call the SpawnProjectile method
-            if (projectileSpawner != null)
+            if (projectileSpawner != null && PlayerInfo.canCast)
             {
                 projectileSpawner.SpawnProjectile(gameObject.tag);
             }

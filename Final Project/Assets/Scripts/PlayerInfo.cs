@@ -15,6 +15,8 @@ public static class PlayerInfo
 
     public static string isOnTile;
 
+    public static bool canCast = false;
+
     public static float playerBias = 0f;
 
     public static string[] aquiredSpells = new string[4];

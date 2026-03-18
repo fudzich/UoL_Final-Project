@@ -27,7 +27,7 @@ public class Fire_SelfBurn : MonoBehaviour
     {
         damageTimer += Time.deltaTime;
 
-        if (damageTimer >= damageInterval)
+        if (damageTimer >= damageInterval && healthManagement.GetCurrentHealth() - selfDamage > 1)
         {
             healthManagement.TakeDamage(selfDamage);
             damageTimer = 0f; // reset timer
