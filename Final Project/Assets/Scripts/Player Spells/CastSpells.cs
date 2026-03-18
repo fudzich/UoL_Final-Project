@@ -31,6 +31,8 @@ public class CastSpells : MonoBehaviour
     private bool isHealCasting = false;
     private bool isTornadoCasting = false;
     private bool isBeamCasting = false;
+
+    public GameObject[] books;
     
     
     void Start()
@@ -54,6 +56,8 @@ public class CastSpells : MonoBehaviour
         {
             spellCooldownTimers[i] += Time.deltaTime;
         }
+        ShowRechargedBooks();
+        
         CheckSpellPress(KeyCode.Alpha1, 0);
         CheckSpellPress(KeyCode.Alpha2, 1);
         CheckSpellPress(KeyCode.Alpha3, 2);
@@ -417,6 +421,21 @@ public class CastSpells : MonoBehaviour
                     spellScripts[i] = waterHeal;
                     break;
 
+            }
+        }
+    }
+
+    private void ShowRechargedBooks()
+    {
+        for(int i = 0; i < books.Length; i++)
+        {
+            if(spellScripts[i] != null && spellCooldownTimers[i] >= spellCooldownDurations[i])
+            {
+                books[i].SetActive(true);
+            }
+            else
+            {
+                books[i].SetActive(false);
             }
         }
     }

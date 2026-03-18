@@ -35,6 +35,13 @@ public class PlayerHealthManagement : MonoBehaviour
             //Debug.Log("AU");
             dead = true;
             PlayerInfo.gameStart = false;
+
+            PlayerInfo.aquiredSpells = new string[4];
+            PlayerInfo.spellsLevel = new int[4];
+            PlayerInfo.maxHealth = 100;
+            PlayerInfo.dmgIncrease = 1;
+            PlayerInfo.playerBias = 0f;
+
             StartCoroutine(WaitAndChangeScene());
         }
     }

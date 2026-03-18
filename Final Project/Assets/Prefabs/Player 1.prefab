@@ -467,6 +467,11 @@ MonoBehaviour:
   waterTornado: {fileID: 1930561329}
   waterHeal: {fileID: 1930561328}
   rechargeTime: 2
+  books:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1155837600069888909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,7 +830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29f4c72f9a1d9d446945740c2819895b, type: 3}
---- !u!1001 &1155837599865356607
+--- !u!1001 &1155837600364600671
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -939,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1245b8d2997d5b34fb1637be70a7eb05, type: 3}
---- !u!1001 &1155837600364600671
+--- !u!1001 &8417206358553929947
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
