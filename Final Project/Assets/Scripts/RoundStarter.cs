@@ -7,6 +7,9 @@ public class RoundStarter : MonoBehaviour
     private EnemySpawner enemySpawner;
     private bool hasStarted = false;
 
+    [SerializeField]
+    private GameObject textStart;
+
     void Start()
     {
         // Get the EnemySpawner component from the same GameObject
@@ -34,6 +37,8 @@ public class RoundStarter : MonoBehaviour
         if (!hasStarted && Input.GetKeyDown(KeyCode.Y))
         {
             PlayerInfo.gameStart = true;
+
+            textStart.SetActive(false);
 
             if (enemySpawner != null)
             {
