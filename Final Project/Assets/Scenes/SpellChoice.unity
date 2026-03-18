@@ -8405,6 +8405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1155837600069888908, guid: b348568ff60c1e2438fda229231ed3d4,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155837600069888908, guid: b348568ff60c1e2438fda229231ed3d4,
+        type: 3}
       propertyPath: books.Array.data[0]
       value: 
       objectReference: {fileID: 270682580}

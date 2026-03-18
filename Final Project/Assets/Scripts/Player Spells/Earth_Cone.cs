@@ -17,6 +17,7 @@ public class Earth_Cone : MonoBehaviour
     public void SpawnCone(int lvl)
     {
         Vector3 spawnPosition = transform.position + transform.forward * 1f; // offset in front
+        spawnPosition.y += 2f; // increase the y-coordinate to spawn higher
         
         GameObject cone = Instantiate(conePrefab, spawnPosition, transform.rotation);
         cone.tag = gameObject.tag;

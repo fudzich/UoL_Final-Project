@@ -26,7 +26,7 @@ public class SlashBehavior : MonoBehaviour
                 {
                     health.TakeDamage(meleeDamage);
                 }
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             // Try to get the HealthManagement component from the other object
             else{
@@ -35,7 +35,7 @@ public class SlashBehavior : MonoBehaviour
                 {
                     health.TakeDamage(meleeDamage);
                 }
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
         
