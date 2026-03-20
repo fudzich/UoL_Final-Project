@@ -9,6 +9,7 @@ public class IAmOnTagTile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerInfo.isOnTile = tagName;
+        if(other.name == "Player")
+            PlayerInfo.isOnTile = tagName;
     }
 }

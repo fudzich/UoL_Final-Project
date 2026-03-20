@@ -7,6 +7,10 @@ public class TeleportToRogueScene : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("SpellChoice");
+        if(other.name == "Player"){
+            PlayerInfo.gameStart = false;
+            SceneManager.LoadScene("SpellChoice");
+        }
+        
     }
 }

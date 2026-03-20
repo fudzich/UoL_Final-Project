@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972f2694aeb0754da689e78e5ef1296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bias: 5
+  bias: 3
 --- !u!114 &51959443
 MonoBehaviour:
   m_ObjectHideFlags: 0

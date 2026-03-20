@@ -791,6 +791,7 @@ MonoBehaviour:
   currentHealth: 0
   damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
     type: 3}
+  heightOffset: 3
 --- !u!65 &4903176896473765312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1169,6 +1170,7 @@ MonoBehaviour:
   currentHealth: 0
   damageBar: {fileID: 789800806506489121, guid: a181a62c7ec1eff49a0bd515bccbf76d,
     type: 3}
+  heightOffset: 3
 --- !u!114 &7719589686782107792
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Nature_SpawnFriend : MonoBehaviour
 {
-
     [SerializeField]
     private GameObject rangedFriend;
     [SerializeField]
     private GameObject meleeFriend;
     [SerializeField]
     private Material materialPrefab;
+    // Offset to spawn friends slightly higher
+    private float heightOffset = 1f;
 
     public void SpawnFriend(int lvl)
     {
-        // Determine spawn position in front of this object
+        // Determine base spawn position in front of this object
         Vector3 basePosition = transform.position + transform.forward * 2f;
         float spawnOffset = 2f;
 
@@ -22,19 +23,19 @@ public class Nature_SpawnFriend : MonoBehaviour
         {
             case 1:
                 // Spawn 1 ranged friend
-                SpawnFriend(rangedFriend, basePosition);
+                SpawnFriend(rangedFriend, basePosition + new Vector3(0, heightOffset, 0));
                 break;
             case 2:
                 // Spawn 1 ranged and 1 melee
-                SpawnFriend(rangedFriend, basePosition);
-                SpawnFriend(meleeFriend, basePosition + new Vector3(spawnOffset, 0, 0));
+                SpawnFriend(rangedFriend, basePosition + new Vector3(0, heightOffset, 0));
+                SpawnFriend(meleeFriend, basePosition + new Vector3(spawnOffset, heightOffset, 0));
                 break;
             case 3:
-                // Spawn 2 ranged and 2 melee
-                SpawnFriend(rangedFriend, basePosition);
-                SpawnFriend(rangedFriend, basePosition + new Vector3(spawnOffset, 0, 0));
-                SpawnFriend(meleeFriend, basePosition + new Vector3(0, 0, spawnOffset));
-                SpawnFriend(meleeFriend, basePosition + new Vector3(spawnOffset, 0, spawnOffset));
+                // Spawn 2 ranged and 2 melee with height offset
+                SpawnFriend(rangedFriend, basePosition + new Vector3(0, heightOffset, 0));
+                SpawnFriend(rangedFriend, basePosition + new Vector3(spawnOffset, heightOffset, 0));
+                SpawnFriend(meleeFriend, basePosition + new Vector3(0, heightOffset, spawnOffset));
+                SpawnFriend(meleeFriend, basePosition + new Vector3(spawnOffset, heightOffset, spawnOffset));
                 break;
             default:
                 Debug.LogWarning("Invalid level provided");
@@ -92,5 +93,4 @@ public class Nature_SpawnFriend : MonoBehaviour
         // Set the tag to match this object
         newFriend.tag = this.tag;
     }
-
 }

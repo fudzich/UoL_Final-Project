@@ -13,7 +13,7 @@ public class GameEnd : MonoBehaviour
             if (objectToActivate != null && !objectToActivate.activeSelf)
             {
                 objectToActivate.SetActive(true);
-                PlayerInfo.gameStart = false;
+                //PlayerInfo.gameStart = false;
             }
         }
     }
