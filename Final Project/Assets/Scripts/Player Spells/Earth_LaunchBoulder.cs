@@ -26,16 +26,17 @@ public class Earth_LaunchBoulder : MonoBehaviour
 
     public void LaunchBoulder(int lvl)
     {
-        //Debug.Log("BLAST");
         if (boulderPrefab != null)
         {
-            Vector3 spawnPosition = transform.position + transform.forward * 1f; // offset in front
+            Vector3 spawnPosition = transform.position + transform.forward * 1f;
             GameObject boulder = Instantiate(boulderPrefab, spawnPosition, transform.rotation);
+            //Give boulder players element
             boulder.tag = gameObject.tag;
             
             BulletFly bulletSpeed = boulder.GetComponent<BulletFly>();
             BoulderDamage  boulderTriggerCunt = boulder.GetComponent<BoulderDamage>();
 
+            //Change boulder speed and max hit count based on spell level
             switch (lvl)
             {
                 case 1:

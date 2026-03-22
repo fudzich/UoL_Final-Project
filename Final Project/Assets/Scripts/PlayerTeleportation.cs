@@ -24,7 +24,6 @@ public class PlayerTeleportation : MonoBehaviour
             if (wPressed && sPressed)
             {
                 // If both W and S are pressed, ignore vertical movement
-                // or you could choose to prioritize one
             }
             else if (wPressed)
             {

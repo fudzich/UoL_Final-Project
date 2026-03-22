@@ -9,6 +9,7 @@ public class SlashBehavior : MonoBehaviour
 
     void Start()
     {
+        //Increase damage in later arenas
         if(gameObject.tag != PlayerInfo.tag)
             meleeDamage+= PlayerInfo.playerBias;
         Destroy(gameObject, lifetime);
@@ -16,9 +17,10 @@ public class SlashBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Avoid damaging objects with the same tag as the bullet
+        // Avoid damaging objects with the same tag as the slash
         if (other.gameObject.tag != this.tag)
         {
+            // Try to get the HealthManagement component from Player
             if(other.name == "Player")
             {
                 var health = other.GetComponent<PlayerHealthManagement>();
@@ -26,7 +28,6 @@ public class SlashBehavior : MonoBehaviour
                 {
                     health.TakeDamage(meleeDamage);
                 }
-                //Destroy(gameObject);
             }
             // Try to get the HealthManagement component from the other object
             else{
@@ -35,7 +36,6 @@ public class SlashBehavior : MonoBehaviour
                 {
                     health.TakeDamage(meleeDamage);
                 }
-                //Destroy(gameObject);
             }
         }
         

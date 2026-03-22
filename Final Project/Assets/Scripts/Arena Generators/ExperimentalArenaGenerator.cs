@@ -12,7 +12,7 @@ public class ExperimentalArenaGenerator : MonoBehaviour
 
     public Vector2 size;
     public int startPos = 0;
-    public GameObject[] tiles; // Assumed ordered as: Earth, Fire, Nature, Water
+    public GameObject[] tiles; // ordered: Earth, Fire, Nature, Water
     public Vector2 offset;
 
     List<Cell> board;
@@ -90,7 +90,7 @@ public class ExperimentalArenaGenerator : MonoBehaviour
         board[bottomLeft].visited = true;
         board[bottomRight].visited = true;
 
-        Stack<int> path = new Stack<int>(); // <-- Add this line
+        Stack<int> path = new Stack<int>();
         int currentCell = startPos;
 
         int k = 0;
@@ -130,13 +130,13 @@ public class ExperimentalArenaGenerator : MonoBehaviour
                     elementCounts[neighborElement]++;
                 }
 
-                // Bias towards less common elements
+                // Bias towards more common elements
                 int totalBiasWeight = 0;
                 Dictionary<int, int> biasWeights = new Dictionary<int, int>();
 
                 foreach (var kvp in elementCounts)
                 {
-                    int weight = 1 + (5 - kvp.Value); // favor less common
+                    int weight = kvp.Value + 5;
                     biasWeights[kvp.Key] = weight;
                     totalBiasWeight += weight;
                 }

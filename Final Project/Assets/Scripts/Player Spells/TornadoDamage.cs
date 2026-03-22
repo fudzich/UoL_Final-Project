@@ -12,7 +12,7 @@ public class TornadoDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Avoid damaging objects with the same tag as the bullet
+        // Avoid damaging objects with the same tag as the spell
         if (elementTags.Contains(other.tag) && other.gameObject.tag != this.tag)
         {
             var health = other.GetComponent<HealthManagement>();

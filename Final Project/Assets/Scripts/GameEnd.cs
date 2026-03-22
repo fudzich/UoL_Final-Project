@@ -18,6 +18,7 @@ public class GameEnd : MonoBehaviour
         }
     }
 
+    //Method that checks that no hostile objects are on the scene
     private bool AreAllObjectsCleared()
     {
         // Get all root objects in the scene

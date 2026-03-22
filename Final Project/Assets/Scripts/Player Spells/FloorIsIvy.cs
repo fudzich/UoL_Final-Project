@@ -22,7 +22,7 @@ public class FloorIsIvy : MonoBehaviour
 
     private void DoDamage(Collider other)
     {
-        // Check if the object is the player
+        // Check if the object has different element
         if (other.gameObject.tag != this.tag)
         {
             // Increment the timer
@@ -41,6 +41,7 @@ public class FloorIsIvy : MonoBehaviour
         }
     }
 
+    //Slow down enemies
     private void DoSlow(Collider other)
     {
         if (other.gameObject.tag != this.tag)
@@ -57,14 +58,13 @@ public class FloorIsIvy : MonoBehaviour
     {
         if (other.gameObject.tag != this.tag)
         {
-            // Reset timer when player leaves
+            // Reset timer when enemy leaves
             damageTimer = 0f;
         }
     }
 
     private void StopSlow(Collider other)
     {
-        //Debug.Log("Hoya");
         if (other.gameObject.tag != this.tag)
         {
             var movement = other.GetComponent<MeleeEnemyBehavior>();

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class MeleeEnemyBehavior : MonoBehaviour
 {
-    [SerializeField] private float focusDistance = 10f;
-    [SerializeField] private List<string> targetTags;
+    [SerializeField] private float focusDistance = 10f; // Max distance to target player
+    [SerializeField] private List<string> targetTags; // Tags of all elements
     [SerializeField] private float attackDistance = 2f; // Distance to trigger slash attack
     [SerializeField] private float moveSpeed = 3f; // Speed at which the enemy moves toward the target
      private float attackRate = 1f; // How often it can attack
     private float attackTimer = 0f;
     private SlashSpawner slashSpawner;
-    //private Rigidbody rb;
 
     [SerializeField]
-    private float speedSlower = 0f;
+    private float speedSlower = 0f; // variable to adjust when creature is slowed
 
     void Start()
     {
@@ -28,9 +27,8 @@ public class MeleeEnemyBehavior : MonoBehaviour
         // Check if the tag exists in the list
         if (targetTags.Contains(objTag))
         {
-            // Remove the tag from the list
+            // Remove the tag of the object from the target list
             targetTags.Remove(objTag);
-            //Debug.Log($"Removed tag {objTag} from the list.");
         }
 
     }
@@ -61,7 +59,7 @@ public class MeleeEnemyBehavior : MonoBehaviour
         // Check other objects if player not prioritized
         if (target == null)
         {
-            Debug.Log("I don't see player");
+            //Debug.Log("I don't see player");
             foreach (string tag in targetTags)
             {
                 GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
@@ -70,10 +68,11 @@ public class MeleeEnemyBehavior : MonoBehaviour
                     if (obj.name == "Bullet(Clone)") // ignoring bullets
                         continue;
 
-                    if (obj.name == "Slash(Clone)") // ignoring bullets
+                    if (obj.name == "Slash(Clone)") // ignoring melee attacks
                         continue;
 
                     float dist = Vector3.Distance(transform.position, obj.transform.position);
+                    // Find the closest target
                     if (dist < closestDistance)
                     {
                         target = obj;
@@ -83,8 +82,6 @@ public class MeleeEnemyBehavior : MonoBehaviour
             }
         }
 
-        //Debug.Log("I exist");
-        // If a target is found, move towards it
        // If a target is found, move towards it
         if (target != null)
         {

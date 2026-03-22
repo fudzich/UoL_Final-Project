@@ -22,15 +22,17 @@ public class Fire_Blast : MonoBehaviour
 
     public void Blast(int lvl)
     {
-        //Debug.Log("BLAST");
         if (effectPrefab != null)
         {
-            // Define the height offset
-            float heightOffset = 0.5f; // change this value as needed
-            // Instantiate the object at a higher position
+            //the height offset
+            float heightOffset = 0.5f;
             GameObject newObject = Instantiate(effectPrefab, new Vector3(transform.position.x, transform.position.y + heightOffset, transform.position.z), Quaternion.identity);
+            
+            //Give spell players element
             newObject.tag = gameObject.tag;
             BlasDamage blastDamage = newObject.GetComponent<BlasDamage>();
+            
+            //Change damage based on spell level
             if (blastDamage != null)
             {
                 switch (lvl)

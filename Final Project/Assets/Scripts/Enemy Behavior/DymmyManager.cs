@@ -6,7 +6,7 @@ public class DymmyManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
-    // Update is called once per frame
+
     void Update()
     {
         CheckPlayerTag();
@@ -19,7 +19,8 @@ public class DymmyManager : MonoBehaviour
             Debug.LogError("Player reference is not assigned.");
             return;
         }
-
+        
+        //Chang tag so player would be able to damagae dummy
         switch (player.tag)
         {
             case "Water":

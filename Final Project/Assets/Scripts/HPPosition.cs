@@ -16,6 +16,7 @@ public class HPPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Move hp with player
         transform.position = player.transform.position + offset;
     }
 }

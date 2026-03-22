@@ -69,6 +69,5 @@ public class PlayerAnimationController : MonoBehaviour
     public void PlayerDead()
     {
         animator.SetBool("dead", true);
-        //animator.SetBool("dead", false);
     }
 }

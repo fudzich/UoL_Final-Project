@@ -24,6 +24,8 @@ public class Earth_SpawnWall : MonoBehaviour
         wall.tag = gameObject.tag;
         
         HealthManagement health = wall.GetComponent<HealthManagement>();
+
+        //Change walls hp based on spells level
         switch (lvl)
         {
             case 1:

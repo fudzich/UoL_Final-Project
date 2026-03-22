@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class OrbitAroundPlayer : MonoBehaviour
 {
-    public Transform parentTransform; // Assign the parent object in inspector
+    public Transform parentTransform;
     public float orbitSpeed = 100f; // Degrees per second
 
     private Vector3 initialOffset; // Initial offset from parent
-    private Quaternion initialRotation; // Keep initial rotation
+    private Quaternion initialRotation;
 
     void Start()
     {

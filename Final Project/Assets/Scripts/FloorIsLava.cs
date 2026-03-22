@@ -9,7 +9,7 @@ public class FloorIsLava : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        // Check if the object is the player
+        // Check if the object is not Fire
         if (other.gameObject.tag != "Fire")
         {
             // Increment the timer
@@ -18,6 +18,7 @@ public class FloorIsLava : MonoBehaviour
             // Apply damage every 1 second
             if (damageTimer >= 1f)
             {
+                // Try to get the HealthManagement component from the player object
                 if(other.name == "Player")
                 {
                     var health = other.GetComponent<PlayerHealthManagement>();

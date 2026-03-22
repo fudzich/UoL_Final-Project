@@ -6,7 +6,6 @@ using TMPro;
 public class HpBarHandler : MonoBehaviour
 {
     public GameObject player;
-    //private float health;
     private PlayerHealthManagement healthManagement;
     private TMP_Text text;
     void Start()
@@ -20,9 +19,14 @@ public class HpBarHandler : MonoBehaviour
         float health = healthManagement.GetCurrentHealth();
         text.text = health.ToString();
 
-        if(health < 30f)
+        //Change hp bar color based on helth left
+        if(health <= 30f)
         {
             text.color = Color.red;
+        }
+        else
+        {
+            text.color = Color.white;
         }
     }
 }

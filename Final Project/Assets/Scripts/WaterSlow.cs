@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WaterSlow : MonoBehaviour
 {
+
+    //Slow down no water element objects
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("Ahoy");
         if (other.gameObject.tag != "Water")
         {
             if(other.name == "Player")
@@ -28,9 +29,9 @@ public class WaterSlow : MonoBehaviour
         }
     }
 
+    //Stop slow when object leave water
     private void OnTriggerExit(Collider other)
     {
-        //Debug.Log("Hoya");
         if (other.gameObject.tag != "Water")
         {
             if(other.name == "Player")

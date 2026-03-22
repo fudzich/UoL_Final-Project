@@ -12,7 +12,7 @@ public class Fire_SelfBurn : MonoBehaviour
     private float dmgIncLVL3 = 1.5f;
 
     [SerializeField]
-    private float selfDamage = 2f;
+    private float selfDamage = 1f;
     
     private bool isBurn = false;
 
@@ -47,6 +47,7 @@ public class Fire_SelfBurn : MonoBehaviour
             
             healthManagement = GetComponent<PlayerHealthManagement>();
             
+            //Change Damage increase based on level
             switch (lvl)
             {
                 case 1:
@@ -68,7 +69,6 @@ public class Fire_SelfBurn : MonoBehaviour
             {
                 GameObject selfBurnObject = selfBurnTransform.gameObject;
                 // Turn it on
-                Debug.Log("Found SelfBurn as child of Player");
                 selfBurnObject.SetActive(true);
             }
             else

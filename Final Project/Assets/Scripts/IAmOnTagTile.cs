@@ -9,6 +9,7 @@ public class IAmOnTagTile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Check what tile the player is standing on
         if(other.name == "Player")
             PlayerInfo.isOnTile = tagName;
     }

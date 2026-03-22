@@ -19,6 +19,7 @@ public class BoulderDamage : MonoBehaviour
                 health.TakeDamage(damage * PlayerInfo.dmgIncrease);
             }
             triggerCounters++;
+            // Destroy boulder when it hits max amount of enemies
             if(triggerCounters >= maxTriggerCounters)
             {
                 Destroy(gameObject);

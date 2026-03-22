@@ -19,15 +19,12 @@ public class Nature_Field : MonoBehaviour
     {
         if (field != null)
         {
-            // Define the height offset
-            //float heightOffset = 0.5f; // change this value as needed
-            // Instantiate the object at a higher position
-            //GameObject newObject = Instantiate(effectPrefab, new Vector3(transform.position.x, transform.position.y + heightOffset, transform.position.z), Quaternion.identity);
             GameObject newObject = Instantiate(field, transform.position, Quaternion.identity);
-            newObject.tag = gameObject.tag;
+            newObject.tag = gameObject.tag; // Give spell players tag
             FloorIsIvy floorIsIvy = newObject.GetComponent<FloorIsIvy>();
             if (floorIsIvy != null)
             {
+                //change damage based on spell level
                 switch (lvl)
                     {
                         case 1:

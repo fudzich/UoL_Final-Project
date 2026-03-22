@@ -16,6 +16,7 @@ public class HealthManagement : MonoBehaviour
 
     void Start()
     {
+        //Increase health for enemies in later arenas
         if(gameObject.tag != PlayerInfo.tag)
             currentHealth = maxHealth+PlayerInfo.playerBias;
         else
@@ -33,13 +34,14 @@ public class HealthManagement : MonoBehaviour
 
     void Update()
     {
-        // Check if health is 0 or below
+        // Destroy object if the health is 0 or below 
         if (currentHealth <= 0f)
         {
             Destroy(gameObject);
         }
     }
 
+    //Show recieved damage in the scene
     private void InstantiateDamageNumber(float damage)
     {
         // Calculate random offset

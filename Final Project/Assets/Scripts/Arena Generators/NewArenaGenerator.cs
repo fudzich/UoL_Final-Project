@@ -13,7 +13,7 @@ public class NewArenaGenerator : MonoBehaviour
 
     public Vector2 size;
     public int startPos = 0;
-    public GameObject[] tiles; // Assumed ordered as: Earth, Fire, Nature, Water
+    public GameObject[] tiles; // ordered of tiles: Earth, Fire, Nature, Water
     public Vector2 offset;
 
     List<Cell> board;
@@ -110,15 +110,13 @@ public class NewArenaGenerator : MonoBehaviour
                     elementCounts[neighborElement]++;
                 }
 
-                // Bias towards less represented elements to promote diversity
-                // Calculate inverse counts for biasing
+                // Calculate counts for biasing
                 int totalBiasWeight = 0;
                 Dictionary<int, int> biasWeights = new Dictionary<int, int>();
 
                 foreach (var kvp in elementCounts)
                 {
-                    // To favor less common, invert counts; add 1 to avoid division by zero
-                    int weight = 1 + (5 - kvp.Value); // or use (maxCount - count + 1)
+                    int weight = kvp.Value + 5;
                     biasWeights[kvp.Key] = weight;
                     totalBiasWeight += weight;
                 }

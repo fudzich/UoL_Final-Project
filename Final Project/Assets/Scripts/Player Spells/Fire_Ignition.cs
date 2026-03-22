@@ -47,7 +47,6 @@ public class Fire_Ignition : MonoBehaviour
                     Instantiate(effectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
                 }
 
-                //Debug.Log("Hit Somethinh");
                 // Access the HealthManagement component
                 HealthManagement health = hoveredObject.GetComponent<HealthManagement>();
                 if (health != null)
@@ -55,12 +54,12 @@ public class Fire_Ignition : MonoBehaviour
                     
                     float playerHealth = GetComponent<PlayerHealthManagement>().GetCurrentHealth();
                     
+                    // Change spell damage based on spell level
                     switch (lvl)
                     {
                         case 1:
                             dmgMultiplier = CalculateDamageMultiplier(playerHealth, PlayerInfo.maxHealth, maxMultiplierLVL1);
                             health.TakeDamage(dmgLVL1 * dmgMultiplier * PlayerInfo.dmgIncrease);
-                            //Debug.Log("Damage Dealt: " + (dmgLVL1 * dmgMultiplier) + PlayerInfo.dmgIncrease);
                             break;
                         case 2:
                             dmgMultiplier = CalculateDamageMultiplier(playerHealth, PlayerInfo.maxHealth, maxMultiplierLVL2);
@@ -85,7 +84,7 @@ public class Fire_Ignition : MonoBehaviour
         // Calculate the percentage of health remaining (0 to 1)
         float healthPercent = currentHealth / maxHealth;
 
-        // Optional: Clamp the value between 0 and 1 to avoid invalid percentages
+        //Clamp the value between 0 and 1 to avoid invalid percentages
         healthPercent = Mathf.Clamp01(healthPercent);
 
         // Calculate the damage multiplier based on how low the health is

@@ -67,7 +67,6 @@ public class TeleportPlayerToGame : MonoBehaviour
 
         if (playerObject != null)
         {
-            //Debug.Log("Found Player");
             // Get the CastSpells component
             CastSpells castSpellsComponent = playerObject.GetComponent<CastSpells>();
             

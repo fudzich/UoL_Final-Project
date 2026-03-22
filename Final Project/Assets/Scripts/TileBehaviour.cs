@@ -7,6 +7,7 @@ public class TileBehaviour : MonoBehaviour
 
     public GameObject[] towers; // 0 - No tower 1 - Sphere tower 2 - Cube tower
 
+    //Chane what building are active on tile
     public void UpdateTile(bool[] status)
     {
         for(int i = 0; i < status.Length; i++)

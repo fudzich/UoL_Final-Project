@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Camera mainCamera;
-    //private Animator animator;
 
     Rigidbody rb;
 
@@ -23,8 +22,6 @@ public class PlayerMovement : MonoBehaviour
     {
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody>();
-
-        //animator = GetComponent<Animator>();
 
         movementDirection = Vector3.zero;
     }
@@ -45,8 +42,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //animator.SetBool("m_forward", true);
-            // Update movementDirection with the input direction (world space)
             movementDirection = moveDir.normalized;
         }
 

@@ -29,6 +29,8 @@ public class Nature_Regen : MonoBehaviour
             if (healTimer >= healInterval)
             {
                 healthManagement = GetComponent<PlayerHealthManagement>();
+
+                //Change heal amount based on spell level
                 switch (lvlOfRegen)
                 {
                     case 1:
@@ -44,18 +46,19 @@ public class Nature_Regen : MonoBehaviour
                         healthManagement.Heal(healLVL3);
                         break;
                 }
+                //Don't increase health above max
                 if(healthManagement.GetCurrentHealth() > PlayerInfo.maxHealth)
                 {
                     healthManagement.SetHealth(PlayerInfo.maxHealth);
                 }
                 healTimer = 0f; // reset timer
 
+                //Activate buff visualisation
                 Transform regenTransform = transform.Find("Regen");
                 if (regenTransform != null)
                 {
                     GameObject regenObject = regenTransform.gameObject;
                     // Turn it on
-                    Debug.Log("Found SelfBurn as child of Player");
                     regenObject.SetActive(true);
                 }
                 else

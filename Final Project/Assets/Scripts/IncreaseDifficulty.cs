@@ -8,6 +8,7 @@ public class IncreaseDifficulty : MonoBehaviour
     private float bias = 5f;
     void Start()
     {
+        //Increase Enemies hp and damage
         PlayerInfo.playerBias+=bias;
     }
 

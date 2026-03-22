@@ -23,11 +23,13 @@ public class CastSpells : MonoBehaviour
     [SerializeField]
     public float rechargeTime = 2f;
 
-    private float[] spellCooldownTimers = new float[4];
-    private float[] spellCooldownDurations = new float[4];
+    private float[] spellCooldownTimers = new float[4]; 
+    private float[] spellCooldownDurations = new float[4]; // Spells max cooldowns
 
-    private MonoBehaviour[] spellScripts = new MonoBehaviour[4];
+    private MonoBehaviour[] spellScripts = new MonoBehaviour[4]; // Saved spells
 
+
+    //Bools to check channeling spells
     private bool isHealCasting = false;
     private bool isTornadoCasting = false;
     private bool isBeamCasting = false;
@@ -69,8 +71,7 @@ public class CastSpells : MonoBehaviour
 
     private void CheckSpellPress(KeyCode key, int i)
     {
-        //Debug.Log(spellCooldownTimers + " " + rechargeTime);
-        if(spellScripts[i] != null && (spellCooldownTimers[i] >= spellCooldownDurations[i] || waterCasting))
+        if(spellScripts[i] != null && (spellCooldownTimers[i] >= spellCooldownDurations[i]))
         {
             if(spellScripts[i] == waterBeam && PlayerInfo.isOnTile == "Water")
             {
@@ -163,7 +164,6 @@ public class CastSpells : MonoBehaviour
     {
         if (fireIgnition != null)
         {
-            //Debug.Log("Cast");
             fireIgnition.Ignite(lvl);
         }
         else
@@ -176,7 +176,6 @@ public class CastSpells : MonoBehaviour
     {
         if (fireBlast != null)
         {
-            //Debug.Log("Cast");
             fireBlast.Blast(lvl);
         }
         else
@@ -189,7 +188,6 @@ public class CastSpells : MonoBehaviour
     {
         if (fireSelfBurn != null)
         {
-            //Debug.Log("Cast");
             fireSelfBurn.SelfBurn(lvl);
         }
         else
@@ -202,7 +200,6 @@ public class CastSpells : MonoBehaviour
     {
         if (natureSpawnFriend != null)
         {
-            //Debug.Log("Cast");
             natureSpawnFriend.SpawnFriend(lvl);
         }
         else
@@ -215,7 +212,6 @@ public class CastSpells : MonoBehaviour
     {
         if (natureRegen != null)
         {
-            //Debug.Log("Cast");
             natureRegen.Regen(lvl);
         }
         else
@@ -228,7 +224,6 @@ public class CastSpells : MonoBehaviour
     {
         if (natureField != null)
         {
-            //Debug.Log("Cast");
             natureField.Field(lvl);
         }
         else
@@ -241,7 +236,6 @@ public class CastSpells : MonoBehaviour
     {
         if (earthCone != null)
         {
-            //Debug.Log("Cast");
             earthCone.SpawnCone(lvl);
         }
         else
@@ -254,7 +248,6 @@ public class CastSpells : MonoBehaviour
     {
         if (earchLaunchBoulder != null)
         {
-            //Debug.Log("Cast");
             earchLaunchBoulder.LaunchBoulder(lvl);
         }
         else
@@ -267,7 +260,6 @@ public class CastSpells : MonoBehaviour
     {
         if (earthSpawnWall != null)
         {
-            //Debug.Log("Cast");
             earthSpawnWall.SpawnWall(lvl);
         }
         else
@@ -278,33 +270,30 @@ public class CastSpells : MonoBehaviour
 
     private void CastHeal(int lvl, KeyCode key, int i)
     {
-        waterCasting = true;
         if (Input.GetKey(key))
         {
             // Start casting if not already
             if (!isHealCasting)
             {
                 isHealCasting = true;
+                waterHeal.Heal(lvl);
             }
-            // Continue casting: heal the player here
-            waterHeal.Heal(lvl);
+            
         }
         else
         {
             // If the button is released, stop casting
             if (isHealCasting)
             {
-                waterCasting = false;
                 isHealCasting = false;
                 waterHeal.StopHeal();
                 spellCooldownTimers[i] = 0;
             }
         }
 
-        // 2. Check if any other key is pressed during casting to interrupt
+        // Check if any other key is pressed during casting to interrupt
         if (isHealCasting && Input.anyKeyDown && !Input.GetKeyDown(key))
         {
-            waterCasting = false;
             isHealCasting = false;
             waterHeal.StopHeal();
             spellCooldownTimers[i] = 0;
@@ -314,7 +303,6 @@ public class CastSpells : MonoBehaviour
 
     private void CastTornado(int lvl, KeyCode key, int i)
     {
-        //waterCasting = true;
         if (Input.GetKey(key))
         {
             // Start casting if not already
@@ -323,25 +311,22 @@ public class CastSpells : MonoBehaviour
                 isTornadoCasting = true;
                 waterTornado.CastTornado(lvl);
             }
-            // Continue casting: heal the player here
         }
         else
         {
             // If the button is released, stop casting
             if (isTornadoCasting)
             {
-                //waterCasting = false;
                 isTornadoCasting = false;
                 waterTornado.StopTornado();
                 spellCooldownTimers[i] = 0;
             }
         }
 
-        // 2. Check if any other key is pressed during casting to interrupt
+        // Check if any other key is pressed during casting to interrupt
         if (isTornadoCasting && Input.anyKeyDown && !Input.GetKeyDown(key))
         {
-            //waterCasting = false;
-           isTornadoCasting = false;
+            isTornadoCasting = false;
             waterTornado.StopTornado();
             spellCooldownTimers[i] = 0;
 
@@ -358,9 +343,7 @@ public class CastSpells : MonoBehaviour
             {
                 isBeamCasting = true;
                 waterBeam.FireBeam(lvl);
-                //Debug.Log("beam cast");
             }
-            // Continue casting: heal the player here
         }
         else
         {
@@ -370,12 +353,11 @@ public class CastSpells : MonoBehaviour
                 waterCasting = false;
                 isBeamCasting = false;
                 waterBeam.StopBeam();
-                //Debug.Log("beam destroyed");
                 spellCooldownTimers[i] = 0;
             }
         }
 
-        // 2. Check if any other key is pressed during casting to interrupt
+        // Check if any other key is pressed during casting to interrupt
         if (isBeamCasting && Input.anyKeyDown && !Input.GetKeyDown(key))
         {
             waterCasting = false;
@@ -386,6 +368,7 @@ public class CastSpells : MonoBehaviour
         }
     }
     
+    //Add spells that are saved in PlayerInfo
     public void CheckListOfSpells()
     {
         //foreach(string spellName in PlayerInfo.aquiredSpells)

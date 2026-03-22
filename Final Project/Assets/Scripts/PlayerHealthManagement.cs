@@ -22,6 +22,7 @@ public class PlayerHealthManagement : MonoBehaviour
         currentHealth -= damageAmount;
     }
 
+    // Public method to increase health
     public void Heal(float healAmount)
     {
         currentHealth += healAmount;
@@ -32,7 +33,7 @@ public class PlayerHealthManagement : MonoBehaviour
         // Check if health is 0 or below
         if (currentHealth <= 0f && !dead)
         {
-            //Debug.Log("AU");
+            currentHealth = 0f;
             dead = true;
             PlayerInfo.gameStart = false;
 
@@ -50,9 +51,9 @@ public class PlayerHealthManagement : MonoBehaviour
     {
 
         playerAnimationController.PlayerDead();
-        // Wait for the animation duration (0.833 seconds)
+        // Wait for the animation duration
         yield return new WaitForSeconds(1.666f);
-        // Load the specified scene
+        // Load the first scene
         SceneManager.LoadScene("OpenScene");
     }
 

@@ -18,7 +18,7 @@ public class Water_Heal : MonoBehaviour
     PlayerHealthManagement healthManagement;
 
     private float healInterval = 1f; // heal every 1 second
-    private float healTimer = 0f;
+    private float healTimer = 1f;
 
     private Transform healTransform;
 
@@ -31,6 +31,7 @@ public class Water_Heal : MonoBehaviour
             if (healTimer >= healInterval)
             {
                 healthManagement = GetComponent<PlayerHealthManagement>();
+                //Change heal amount based on spell level
                 switch (lvlOfHeal)
                 {
                     case 1:
@@ -46,12 +47,9 @@ public class Water_Heal : MonoBehaviour
                         healthManagement.Heal(healLVL3);
                         break;
                 }
-                if(healthManagement.GetCurrentHealth() > PlayerInfo.maxHealth)
-                {
-                    //healthManagement.SetHealth(PlayerInfo.maxHealth);
-                }
                 healTimer = 0f; // reset timer
 
+                //ativate casting visualistion
                 healTransform = transform.Find("Healing circle");
                 if (healTransform != null)
                 {
@@ -86,7 +84,6 @@ public class Water_Heal : MonoBehaviour
         {
             GameObject regenObject = healTransform.gameObject;
             // Turn it on
-            Debug.Log("Found SelfBurn as child of Player");
             regenObject.SetActive(false);
         }
         else

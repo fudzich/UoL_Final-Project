@@ -19,6 +19,7 @@ public class RoundStarter : MonoBehaviour
             Debug.LogError("EnemySpawner component not found on this GameObject.");
         }
 
+        //Apply allied tag to player
         GameObject playerObject = GameObject.Find("Player");
 
             if (PlayerInfo.tag != null)
@@ -27,6 +28,7 @@ public class RoundStarter : MonoBehaviour
             }
             else
             {
+                //Apply water element by default
                 PlayerInfo.tag = "Water";
                 playerObject.tag = PlayerInfo.tag;
             }
