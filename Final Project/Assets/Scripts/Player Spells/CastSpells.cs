@@ -371,7 +371,6 @@ public class CastSpells : MonoBehaviour
     //Add spells that are saved in PlayerInfo
     public void CheckListOfSpells()
     {
-        //foreach(string spellName in PlayerInfo.aquiredSpells)
         for (int i = 0; i < PlayerInfo.aquiredSpells.Length; i++)
         {
             switch (PlayerInfo.aquiredSpells[i])

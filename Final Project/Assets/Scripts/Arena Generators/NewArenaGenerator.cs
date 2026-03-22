@@ -25,8 +25,6 @@ public class NewArenaGenerator : MonoBehaviour
 
     void GenerateArena()
     {
-        int previousTile = Random.Range(0, tiles.Length);
-        int randomTile;
 
         for (int i = 0; i < size.x; i++)
         {
@@ -38,17 +36,9 @@ public class NewArenaGenerator : MonoBehaviour
                 // Select prefab based on element
                 GameObject tilePrefab = tiles[elementType];
 
-                // Randomly choose tile variation
-                if (Random.Range(0, 2) == 0)
-                    randomTile = Random.Range(0, tiles.Length);
-                else
-                    randomTile = previousTile;
-
                 var newTile = Instantiate(tilePrefab, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform);
                 newTile.GetComponent<TileBehaviour>().UpdateTile(board[cellIndex].status);
                 newTile.name += $" {i} {j}";
-
-                previousTile = randomTile;
             }
         }
     }
